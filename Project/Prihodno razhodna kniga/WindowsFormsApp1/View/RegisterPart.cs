@@ -27,10 +27,9 @@ namespace WindowsFormsApp1.View
             InitializeComponent();
         }
 
-
         private void Register_Click(object sender, EventArgs e)
         {
-
+            LoginPart login = new LoginPart();
             try
             {
                 if (txtUsernameRegisterForm.Text == "" || txtPasswordRegisterForm.Text == "" || txtConfirmPasswordRegisterForm.Text == "" || Bookstypes.Text == "")
@@ -44,10 +43,17 @@ namespace WindowsFormsApp1.View
                     // decimal checkout = smallshop.GetValuesForCheckout();
                     if (txtPasswordRegisterForm.Text == txtConfirmPasswordRegisterForm.Text)
                     {
-                        BookForUser.Add(smallshop.GetTime(), 1, 2, 3, 4, 5, 6);
-                        UserAccount.Add(Bookstypes.Text, 1);
-                        User.Add(txtUsernameRegisterForm.Text, txtPasswordRegisterForm.Text, 1);
+                        //BookForUser.Add(1,smallshop.GetTime(),0, 0, 0, 0, 0, 0);
+                        User.Add(txtUsernameRegisterForm.Text,  txtPasswordRegisterForm.Text);
+                        var a = User.GetAllIds();
+                        UserAccount.Add(Bookstypes.Text,a);
+                        this.Hide();
+                        login.Show();
                         MessageBox.Show("Succsessfully registered");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Passswords doesn't match");
                     }
                 }
                 else if (Bookstypes.Text == "Medium Shop")
@@ -60,7 +66,7 @@ namespace WindowsFormsApp1.View
                 }
                 else
                 {
-                    MessageBox.Show("Confirm Password must be the same as Password");
+                    MessageBox.Show("Passwords doesn't match");
                 }
 
             }
@@ -77,6 +83,13 @@ namespace WindowsFormsApp1.View
         private void message(object sender, EventArgs e)
         {
             MessageBox.Show("Small Shop - 2 checkouts" + Environment.NewLine + "Medium Shop - 4 checkouts" + Environment.NewLine + "Large Shop - 6 checkouts");
+        }
+
+        private void Return_Click(object sender, EventArgs e)
+        {
+            LoginPart login = new LoginPart();
+            this.Hide();
+            login.Show();
         }
     }
 }

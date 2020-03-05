@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Data.Models
 {
-    public class RevenueExpenditureBookContexts
+    public class RevenueExpenditureBook
     {
         [Key]
         public int Id { get; set; }
@@ -26,5 +26,6 @@ namespace WindowsFormsApp1.Data.Models
         public decimal Counted { get; set; }
 
         public decimal CheckOutPlusAndMinus { get; set; }
+
     }
 }

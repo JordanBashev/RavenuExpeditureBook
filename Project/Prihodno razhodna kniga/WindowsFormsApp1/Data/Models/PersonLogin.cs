@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WindowsFormsApp1.Data.Models
 {
-    public class PersonLoginContexts
+    public class PersonLogin
     {
         [Key]
         public int Id { get; set; }
@@ -15,11 +15,7 @@ namespace WindowsFormsApp1.Data.Models
         [Required]
         public string Password { get; set; }
 
-        //public DateTime DeletedOn { get; set; }
-
-        [ForeignKey(nameof(PersonAccount))]
-        public int PersonAccountId { get; set; }
-        public virtual PersonAccountContexts PersonAccount { get; set; }
+        
 
     }
 }

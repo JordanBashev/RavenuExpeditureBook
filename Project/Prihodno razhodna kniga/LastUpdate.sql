@@ -1,30 +1,30 @@
-﻿CREATE TABLE [dbo].[RevenueExpenditureBooks]
-(
-	[Id] INT NOT NULL PRIMARY KEY IDENTITY,
-	[Datetime] DATETIME NOT NULL,
-	[Income] DECIMAL NOT NULL,
-	[Raw Materials] DECIMAL NOT NULL,
-	[Costs] DECIMAL NOT NULL,
-	[Balance] DECIMAL NOT NULL,
-	[Counted] DECIMAL NOT NULL,
-	[Checkout+-] DECIMAL NOT NULL
-)
-CREATE TABLE [dbo].[PersonAccounts]
-(
-    [Id] INT NOT NULL PRIMARY KEY IDENTITY,
-	[BookType] NVARCHAR(60) NOT NULL,
-	[RavenueBookId] INT,
-    CONSTRAINT fk_PersonAccounts_RevenueExpenditureBooks
-	FOREIGN KEY (RavenueBookId)
-	REFERENCES dbo.RevenueExpenditureBooks(Id)
-)
+﻿--CREATE TABLE [dbo].[RevenueExpenditureBooks]
+--(
+--	[Id] INT NOT NULL PRIMARY KEY,
+--	[Date] DATE NOT NULL,
+--	[Income] DECIMAL NOT NULL,
+--	[RawMaterials] DECIMAL NOT NULL,
+--	[Expense] DECIMAL NOT NULL,
+--	[Balance] DECIMAL NOT NULL,
+--	[Counted] DECIMAL NOT NULL,
+--	[CheckOutPlusAndMinus] DECIMAL NOT NULL
+--)
 CREATE TABLE [dbo].[PersonRegisters]
 (
     [Id] INT NOT NULL PRIMARY KEY IDENTITY,
 	[Username] NVARCHAR(16) NOT NULL,
 	[Password] NVARCHAR(16) NOT NULL,
-	[PersonAccountId] INT,
-	CONSTRAINT fk_PersonRegister_PersonAccount
-	FOREIGN KEY (PersonAccountId)
-	REFERENCES dbo.PersonAccounts(Id)
+)
+CREATE TABLE [dbo].[PersonAccounts]
+(
+    [Id] INT NOT NULL PRIMARY KEY IDENTITY,
+	[BookType] NVARCHAR(18) NOT NULL,
+	--[RavenueBookId] INT,
+	[PersonLoginId] INT NOT NULL,
+	CONSTRAINT fk_PersonAccount_PersonRegisters
+	FOREIGN KEY (PersonLoginId)
+	REFERENCES PersonRegisters(Id),
+    --CONSTRAINT fk_PersonAccounts_RevenueExpenditureBooks
+	--FOREIGN KEY (RavenueBookId)
+	--REFERENCES dbo.RevenueExpenditureBooks(Id)
 )

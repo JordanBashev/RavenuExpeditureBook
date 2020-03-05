@@ -5,12 +5,12 @@ namespace WindowsFormsApp1.Bussiness
 {
     public class PersonAccountController
     {
-        public void Add(string Booktype,int Id)
+        public void Add(string Booktype,int id)
         {
             ApplicationContexts context = new ApplicationContexts();
             using (context)
             {
-                PersonAccountContexts UserAccountBookAdding = new PersonAccountContexts() {BookType = Booktype,RavenueBookId = Id};
+                PersonAccount UserAccountBookAdding = new PersonAccount() {BookType = Booktype, PersonLoginId = id};
 
                 context.PersonAccounts.Add(UserAccountBookAdding);
                 context.SaveChanges();

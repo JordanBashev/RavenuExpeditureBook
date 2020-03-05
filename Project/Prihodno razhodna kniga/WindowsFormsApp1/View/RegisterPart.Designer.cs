@@ -37,6 +37,7 @@
             this.Register = new System.Windows.Forms.Button();
             this.Bookstypes = new System.Windows.Forms.ComboBox();
             this.BookType = new System.Windows.Forms.Label();
+            this.Return = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // txtPasswordRegisterForm
@@ -102,9 +103,9 @@
             // Register
             // 
             this.Register.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Register.Location = new System.Drawing.Point(100, 206);
+            this.Register.Location = new System.Drawing.Point(259, 206);
             this.Register.Name = "Register";
-            this.Register.Size = new System.Drawing.Size(258, 70);
+            this.Register.Size = new System.Drawing.Size(199, 70);
             this.Register.TabIndex = 13;
             this.Register.Text = "Register";
             this.Register.UseVisualStyleBackColor = true;
@@ -134,11 +135,23 @@
             this.BookType.TabIndex = 15;
             this.BookType.Text = "RavenueBook For:";
             // 
+            // Return
+            // 
+            this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Return.Location = new System.Drawing.Point(2, 206);
+            this.Return.Name = "Return";
+            this.Return.Size = new System.Drawing.Size(204, 70);
+            this.Return.TabIndex = 16;
+            this.Return.Text = "Return";
+            this.Return.UseVisualStyleBackColor = true;
+            this.Return.Click += new System.EventHandler(this.Return_Click);
+            // 
             // RegisterPart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(470, 288);
+            this.Controls.Add(this.Return);
             this.Controls.Add(this.BookType);
             this.Controls.Add(this.Bookstypes);
             this.Controls.Add(this.Register);
@@ -166,5 +179,6 @@
         private System.Windows.Forms.Button Register;
         private System.Windows.Forms.ComboBox Bookstypes;
         private System.Windows.Forms.Label BookType;
+        private System.Windows.Forms.Button Return;
     }
 }

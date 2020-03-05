@@ -34,12 +34,15 @@ namespace WindowsFormsApp1.View
 
         private void Login_Click(object sender, EventArgs e)
         {
+            var small = "Small Shop";
+            var medium = "Medium Shop";
+            var large = "Large Shop";
             var pass = txtPassword.Text;
             var username = txtUsername.Text;
             var Checkpass = contexts.PersonRegisters.FirstOrDefault(x => x.Password == pass);
             var CheckUsername = contexts.PersonRegisters.FirstOrDefault(x => x.Username == username);
 
-            var checkforBook = contexts.PersonAccounts.FirstOrDefault(x => x.BookType == register.GetBookType());
+            var checkforBook = contexts.PersonAccounts.FirstOrDefault(x => x.BookType == small);
 
             try
             {
@@ -59,10 +62,10 @@ namespace WindowsFormsApp1.View
                     //    //large shop
                     //}
                 }
-            }
-            catch (Exception ex)
+            } 
+            catch (Exception)
             {
-                MessageBox.Show("Invalid Password and Username!");
+                MessageBox.Show("Invalid Password or Username!");
             }
         }
     }

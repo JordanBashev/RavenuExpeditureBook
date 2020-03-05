@@ -240,9 +240,9 @@
     <Compile Include="Bussiness\RevenueExpenditureBookController.cs" />
     <Compile Include="Data\ApplicationContexts.cs" />
     <Compile Include="Data\Configuration.cs" />
-    <Compile Include="Data\Models\RevenueExpenditureBookContexts.cs" />
-    <Compile Include="Data\Models\PersonLoginContexts.cs" />
-    <Compile Include="Data\Models\PersonAccountContexts.cs" />
+    <Compile Include="Data\Models\RevenueExpenditureBook.cs" />
+    <Compile Include="Data\Models\PersonLogin.cs" />
+    <Compile Include="Data\Models\PersonAccount.cs" />
     <Compile Include="REMINDERS.cs" />
     <Compile Include="View\LoginPart.cs">
       <SubType>Form</SubType>

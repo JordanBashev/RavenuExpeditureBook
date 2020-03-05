@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,11 +23,11 @@ namespace WindowsFormsApp1.Data
 
         }
         
-        public virtual DbSet<PersonLoginContexts> PersonRegisters { get; set; }
+        public virtual DbSet<PersonLogin> PersonRegisters { get; set; }
 
-        public virtual DbSet<PersonAccountContexts> PersonAccounts { get; set; }
+        public virtual DbSet<PersonAccount> PersonAccounts { get; set; }
 
-        public virtual DbSet<RevenueExpenditureBookContexts> RevenueExpenditureBooks { get; set; }
+        public virtual DbSet<RevenueExpenditureBook> RevenueExpenditureBooks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

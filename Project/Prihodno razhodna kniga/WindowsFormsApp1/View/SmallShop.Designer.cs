@@ -159,6 +159,7 @@
             this.textBox52 = new System.Windows.Forms.TextBox();
             this.textBox63 = new System.Windows.Forms.TextBox();
             this.Info = new System.Windows.Forms.Button();
+            this.UpdateDB = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -527,9 +528,8 @@
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label11.Location = new System.Drawing.Point(6, 310);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(191, 25);
+            this.label11.Size = new System.Drawing.Size(0, 25);
             this.label11.TabIndex = 29;
-            this.label11.Text = "(need explanation)";
             // 
             // label12
             // 
@@ -1669,6 +1669,17 @@
             this.Info.UseVisualStyleBackColor = true;
             this.Info.Click += new System.EventHandler(this.Info_Click);
             // 
+            // UpdateDB
+            // 
+            this.UpdateDB.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.UpdateDB.Location = new System.Drawing.Point(779, 172);
+            this.UpdateDB.Name = "UpdateDB";
+            this.UpdateDB.Size = new System.Drawing.Size(222, 67);
+            this.UpdateDB.TabIndex = 143;
+            this.UpdateDB.Text = "Update ";
+            this.UpdateDB.UseVisualStyleBackColor = true;
+            this.UpdateDB.Click += new System.EventHandler(this.UpdateDB_Click);
+            // 
             // SmallShop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1806,6 +1817,7 @@
             this.Controls.Add(this.textBox63);
             this.Controls.Add(this.textBox13);
             this.Controls.Add(this.Info);
+            this.Controls.Add(this.UpdateDB);
             this.Name = "SmallShop";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "SmallShop";
@@ -1993,5 +2005,6 @@
         private System.Windows.Forms.TextBox textBox52;
         private System.Windows.Forms.TextBox textBox63;
         private System.Windows.Forms.Button Info;
+        private System.Windows.Forms.Button UpdateDB;
     }
 }
