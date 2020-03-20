@@ -123,7 +123,7 @@
             this.Bookstypes.Name = "Bookstypes";
             this.Bookstypes.Size = new System.Drawing.Size(175, 32);
             this.Bookstypes.TabIndex = 14;
-            this.Bookstypes.DropDown += new System.EventHandler(this.message);
+            this.Bookstypes.DropDown += new System.EventHandler(this.Message);
             // 
             // BookType
             // 

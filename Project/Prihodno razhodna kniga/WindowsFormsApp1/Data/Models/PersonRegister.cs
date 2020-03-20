@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WindowsFormsApp1.Data.Models
 {
-    public class PersonLogin
+    public class PersonRegister
     {
         [Key]
         public int Id { get; set; }
@@ -14,8 +14,5 @@ namespace WindowsFormsApp1.Data.Models
 
         [Required]
         public string Password { get; set; }
-
-        
-
     }
 }

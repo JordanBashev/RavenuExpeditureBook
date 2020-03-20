@@ -27,5 +27,8 @@ namespace WindowsFormsApp1.Data.Models
 
         public decimal CheckOutPlusAndMinus { get; set; }
 
+        [ForeignKey(nameof(PersonBookType))]
+        public int AccountRavenueBookId { get; set; }
+        public virtual PersonBookType PersonBookType { get; set; }
     }
 }

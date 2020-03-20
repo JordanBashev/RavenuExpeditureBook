@@ -8,13 +8,16 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApp1.Data.Models
 {
-    public class PersonAccount
+    public class PersonBookType
     {
         [Key]
-        public int PersonRegistersId { get; set; }
+        public int Id { get; set; }
 
-        [ForeignKey(nameof(PersonBook))]
-        public int PersonBookTypesId { get; set; }
-        public virtual PersonBookType PersonBook { get; set; }
+        [Required]
+        public string BookType { get; set; }
+
+        [ForeignKey(nameof(Accounts))]
+        public int PersonAccountId { get; set; }
+        public virtual PersonAccount Accounts { get; set; }
     }
 }

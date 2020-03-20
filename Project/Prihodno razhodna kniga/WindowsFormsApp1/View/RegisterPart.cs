@@ -19,15 +19,17 @@ namespace WindowsFormsApp1.View
     public partial class RegisterPart : Form
     {
         PersonRegisterController User = new PersonRegisterController();
-        PersonAccountController UserAccount = new PersonAccountController();
+        PersonBookTypeController UserBookType = new PersonBookTypeController();
         RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController();
-        SmallShop smallshop = new SmallShop();
+        PersonAccountController UserAccount = new PersonAccountController();
+        ApplicationContext context = new ApplicationContext();
+        RevenueExpeditureBook smallshop = new RevenueExpeditureBook();
         public RegisterPart()
         {
             InitializeComponent();
         }
 
-        private void Register_Click(object sender, EventArgs e)
+        public void Register_Click(object sender, EventArgs e)
         {
             LoginPart login = new LoginPart();
             try
@@ -38,15 +40,21 @@ namespace WindowsFormsApp1.View
                 }
                 if (Bookstypes.Text == "Small Shop")
                 {
-                    
-                    //in number 6 goes checkout with all the summed up numbers
-                    // decimal checkout = smallshop.GetValuesForCheckout();
                     if (txtPasswordRegisterForm.Text == txtConfirmPasswordRegisterForm.Text)
                     {
-                        //BookForUser.Add(1,smallshop.GetTime(),0, 0, 0, 0, 0, 0);
-                        User.Add(txtUsernameRegisterForm.Text,  txtPasswordRegisterForm.Text);
+                        User.Add(txtUsernameRegisterForm.Text, txtPasswordRegisterForm.Text);
+                        if(!(UserBookType.CheckIfExsist()))
+                        {
+                            var small = "Small Shop";
+                            //var medeum = "Medium Shop";
+                            //var Large = "Large Shop";
+                            UserBookType.Add(small, 1);
+                            //UserBookType.Add(medeum, 2);
+                            //UserBookType.Add(Large, 3);                          
+                        }
                         var a = User.GetAllIds();
-                        UserAccount.Add(Bookstypes.Text,a);
+                        UserAccount.Add(a, 1);
+                        BookForUser.Add(smallshop.GetTime(),0, 0, 0, 0, 0, 0,1);
                         this.Hide();
                         login.Show();
                         MessageBox.Show("Succsessfully registered");
@@ -80,7 +88,7 @@ namespace WindowsFormsApp1.View
         {
             return Bookstypes.Text;
         }
-        private void message(object sender, EventArgs e)
+        private void Message(object sender, EventArgs e)
         {
             MessageBox.Show("Small Shop - 2 checkouts" + Environment.NewLine + "Medium Shop - 4 checkouts" + Environment.NewLine + "Large Shop - 6 checkouts");
         }

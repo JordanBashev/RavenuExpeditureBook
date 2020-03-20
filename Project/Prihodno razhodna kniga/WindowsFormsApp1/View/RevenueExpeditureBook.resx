@@ -132,7 +132,7 @@
         XQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="LastLine.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
@@ -391,6 +391,30 @@
         XQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="autosizer.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="UsingForCreation.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="pictureBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
   <data name="pictureBox41.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
@@ -398,11 +422,42 @@
         XQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="pictureBox43.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="pictureBox42.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
         XQAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="pictureBox49.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pictureBox50.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pictureBox51.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="pictureBox52.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAICAYAAADA+m62AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        xAAADsQBlSsOGwAAACdJREFUKFONyLENAAAIw7D+/3RhRh6I5CXZ+sQpnMIpnMIpnMJ5pAOZbk+xkLHI
+        XQAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>25</value>
+  </metadata>
 </root>

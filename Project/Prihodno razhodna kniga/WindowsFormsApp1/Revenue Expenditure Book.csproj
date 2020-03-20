@@ -236,14 +236,16 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Bussiness\PersonAccountController.cs" />
+    <Compile Include="Bussiness\PersonBookTypeController.cs" />
     <Compile Include="Bussiness\PersonRegisterController.cs" />
     <Compile Include="Bussiness\RevenueExpenditureBookController.cs" />
     <Compile Include="Data\ApplicationContexts.cs" />
     <Compile Include="Data\Configuration.cs" />
-    <Compile Include="Data\Models\RevenueExpenditureBook.cs" />
-    <Compile Include="Data\Models\PersonLogin.cs" />
     <Compile Include="Data\Models\PersonAccount.cs" />
-    <Compile Include="REMINDERS.cs" />
+    <Compile Include="Data\Models\RevenueExpenditureBook.cs" />
+    <Compile Include="Data\Models\PersonRegister.cs" />
+    <Compile Include="Data\Models\PersonBookType.cs" />
+    <Compile Include="TODOLIST.cs" />
     <Compile Include="View\LoginPart.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -258,11 +260,11 @@
     <Compile Include="View\RegisterPart.Designer.cs">
       <DependentUpon>RegisterPart.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\SmallShop.cs">
+    <Compile Include="View\RevenueExpeditureBook.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\SmallShop.Designer.cs">
-      <DependentUpon>SmallShop.cs</DependentUpon>
+    <Compile Include="View\RevenueExpeditureBook.Designer.cs">
+      <DependentUpon>RevenueExpeditureBook.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="View\LoginPart.resx">
       <DependentUpon>LoginPart.cs</DependentUpon>
@@ -279,8 +281,8 @@
     <EmbeddedResource Include="View\RegisterPart.resx">
       <DependentUpon>RegisterPart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\SmallShop.resx">
-      <DependentUpon>SmallShop.cs</DependentUpon>
+    <EmbeddedResource Include="View\RevenueExpeditureBook.resx">
+      <DependentUpon>RevenueExpeditureBook.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

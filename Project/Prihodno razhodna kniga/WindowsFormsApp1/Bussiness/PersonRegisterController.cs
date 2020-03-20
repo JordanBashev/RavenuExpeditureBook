@@ -6,27 +6,24 @@ namespace WindowsFormsApp1.Bussiness
 {
     public class PersonRegisterController
     {
+        ApplicationContexts context = new ApplicationContexts();
+
         public int GetAllIds()
         {
             ApplicationContexts contexts = new ApplicationContexts();
-
             var getId = contexts.PersonRegisters.Count();
             return getId;
         }
+
         public void Add(string name,string password)
         {
-            ApplicationContexts context = new ApplicationContexts();
             using (context)
             {
-                PersonLogin UserAdding = new PersonLogin() { Username = name, Password = password };
+                PersonRegister UserAdding = new PersonRegister() { Username = name, Password = password };
 
                 context.PersonRegisters.Add(UserAdding);
                 context.SaveChanges();
             }
-        }
-        public void LoginCheck(string name,string password)
-        {
-
         }
     }
 }

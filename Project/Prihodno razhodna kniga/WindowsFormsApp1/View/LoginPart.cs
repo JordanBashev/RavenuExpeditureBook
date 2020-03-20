@@ -16,15 +16,13 @@ namespace WindowsFormsApp1.View
 {
     public partial class LoginPart : Form
     {
-        
-
         public LoginPart()
         {
             InitializeComponent();
         }
         ApplicationContexts contexts = new ApplicationContexts();
         RegisterPart register = new RegisterPart();
-        SmallShop smallshop = new SmallShop();
+        RevenueExpeditureBook smallshop = new RevenueExpeditureBook();
         
         private void Register_Click(object sender, EventArgs e)
         {
@@ -42,7 +40,7 @@ namespace WindowsFormsApp1.View
             var Checkpass = contexts.PersonRegisters.FirstOrDefault(x => x.Password == pass);
             var CheckUsername = contexts.PersonRegisters.FirstOrDefault(x => x.Username == username);
 
-            var checkforBook = contexts.PersonAccounts.FirstOrDefault(x => x.BookType == small);
+            var checkforBook = contexts.PersonBookTypes.FirstOrDefault(x => x.BookType == small);
 
             try
             {
