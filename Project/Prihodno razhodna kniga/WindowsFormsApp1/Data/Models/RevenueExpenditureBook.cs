@@ -30,5 +30,9 @@ namespace WindowsFormsApp1.Data.Models
         [ForeignKey(nameof(PersonBookType))]
         public int AccountRavenueBookId { get; set; }
         public virtual PersonBookType PersonBookType { get; set; }
+
+        [ForeignKey(nameof(UserRegisterId))]
+        public int UserRegisteredId { get; set; }
+        public virtual PersonRegister UserRegisterId { get; set; }
     }
 }

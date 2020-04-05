@@ -27,8 +27,9 @@ namespace WindowsFormsApp1.Data
 
         public virtual DbSet<PersonBookType> PersonBookTypes { get; set; }
 
-        public virtual DbSet<RevenueExpenditureBook> RevenueExpenditureBooks { get; set; }
         public virtual DbSet<PersonAccount> PersonAccounts { get; set; }
+
+        public virtual DbSet<RevenueExpenditureBook> RevenueExpenditureBooks { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

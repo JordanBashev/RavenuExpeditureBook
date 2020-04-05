@@ -6,7 +6,17 @@ namespace WindowsFormsApp1.Bussiness
 {
     public class PersonBookTypeController
     {
-        ApplicationContexts context = new ApplicationContexts();
+        private ApplicationContexts context;
+        public PersonBookTypeController(ApplicationContexts contex)
+        {
+            this.context = contex;
+        }
+
+        public PersonBookTypeController()
+        {
+
+        }
+
         public bool CheckIfExsist()
         {
             var a = context.PersonBookTypes.Count().Equals(1);
@@ -14,8 +24,7 @@ namespace WindowsFormsApp1.Bussiness
         }
        
         public void Add(string Booktype,int id)
-        {
-            
+        {            
             using (context)
             {
                 PersonBookType UserAccountBookAdding = new PersonBookType() {BookType = Booktype, PersonAccountId = id};

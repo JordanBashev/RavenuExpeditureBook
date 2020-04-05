@@ -174,6 +174,8 @@
             this.GreenAutoSizer = new System.Windows.Forms.PictureBox();
             this.LightRedAutoSizer = new System.Windows.Forms.PictureBox();
             this.RedAutoSizer = new System.Windows.Forms.PictureBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.Sync = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastLine)).BeginInit();
@@ -1889,6 +1891,27 @@
             this.RedAutoSizer.TabStop = false;
             this.RedAutoSizer.Tag = "";
             // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(8, 9);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 13);
+            this.label14.TabIndex = 156;
+            this.label14.Text = "label14";
+            this.label14.Visible = false;
+            // 
+            // Sync
+            // 
+            this.Sync.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Sync.Location = new System.Drawing.Point(779, 289);
+            this.Sync.Name = "Sync";
+            this.Sync.Size = new System.Drawing.Size(222, 60);
+            this.Sync.TabIndex = 157;
+            this.Sync.Text = "Synchronize";
+            this.Sync.UseVisualStyleBackColor = true;
+            this.Sync.Click += new System.EventHandler(this.Sync_Click);
+            // 
             // RevenueExpeditureBook
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1896,6 +1919,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
             this.ClientSize = new System.Drawing.Size(1020, 749);
+            this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox52);
             this.Controls.Add(this.pictureBox51);
             this.Controls.Add(this.pictureBox50);
@@ -2039,6 +2063,7 @@
             this.Controls.Add(this.GreenAutoSizer);
             this.Controls.Add(this.RedAutoSizer);
             this.Controls.Add(this.LightRedAutoSizer);
+            this.Controls.Add(this.Sync);
             this.Name = "RevenueExpeditureBook";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Tag = "";
@@ -2251,5 +2276,7 @@
         private System.Windows.Forms.PictureBox GreenAutoSizer;
         private System.Windows.Forms.PictureBox LightRedAutoSizer;
         private System.Windows.Forms.PictureBox RedAutoSizer;
+        public System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Button Sync;
     }
 }

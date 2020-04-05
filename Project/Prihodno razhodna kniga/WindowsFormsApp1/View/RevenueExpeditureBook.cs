@@ -15,14 +15,23 @@ namespace WindowsFormsApp1.View
     public partial class RevenueExpeditureBook : Form
     {
 
+        RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController(new ApplicationContexts());
+        ApplicationContexts contexts = new ApplicationContexts();
         public RevenueExpeditureBook()
         {
             InitializeComponent();
             DatetimeLabel.Text = DateTime.Today.ToShortDateString();
             timer1.Enabled = true;
         }
-        RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController();
-        ApplicationContexts contexts = new ApplicationContexts();
+
+        private string GetUserid()
+        {
+            var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
+            var getthisid = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.UserRegisteredId == getusernameid.Id);
+            var GetCountedFromYesterday = contexts.RevenueExpenditureBooks.Where(x => x.UserRegisteredId == getthisid.Id).FirstOrDefault(x => x.Date == GetTime().AddDays(-1));
+            return Income1.Text = GetCountedFromYesterday.Counted.ToString();
+            
+        }
 
         public string GetIncomeValue()
         {
@@ -111,16 +120,19 @@ namespace WindowsFormsApp1.View
 
         private void Sum_Click(object sender, EventArgs e)
         {
-            GetValuesForCheckout();     
+            GetValuesForCheckout();
         }
 
         private void Info_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("To get started this is a simple RavenueExpeditureBook that will allow to easly calculate your expenses and income so u dont get lost in tons of paper and a few calculators." + Environment.NewLine + "1 - This only work for the data of the day u are using it and u can't rewrite old ones(yet)" + Environment.NewLine + "2 - Income: How much you earned today" + Environment.NewLine + "3 - Raw Material: How much you spended for supplies" + Environment.NewLine + "4 - Expenses: Own expenses" + Environment.NewLine + "5 - Balance: Sum of all the income and expediture" + Environment.NewLine + "6 - Counted: How much money you counted from the checkout" + Environment.NewLine + "7 - Update: Save's the current results or creates a new save" + Environment.NewLine + "8 - Delete: Deletes the first save file");
+            Information name = new Information();
+            name.Show();
         }
 
         private void UpdateDB_Click(object sender, EventArgs e)
         {
+            var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
+            var getthisid = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.UserRegisteredId == getusernameid.Id);
             var CheckForDateTrue = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Date == GetTime());
             var Income = decimal.Parse(GetIncomeValue());
             var RawMaterial = decimal.Parse(GetRawMaterialsValue());
@@ -128,14 +140,14 @@ namespace WindowsFormsApp1.View
             var Balance = decimal.Parse(GetBalanceValue());
             var Counted = decimal.Parse(GetCountedValue());
             var CheckOut = decimal.Parse(GetCheckoutValue());
-            if (CheckForDateTrue == null)
+            if (CheckForDateTrue == null) 
             {
-                BookForUser.Add(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1);
+                BookForUser.Add(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getusernameid.Id);
                 MessageBox.Show("Database updated succsesfully");
             }
-            else
+            else if (CheckForDateTrue.Date == GetTime() && getusernameid.Id == getthisid.Id)
             {
-                BookForUser.Update(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1);
+                BookForUser.Update(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getusernameid.Id);
                 MessageBox.Show("Database updated succsesfully");
             }
         }
@@ -147,14 +159,14 @@ namespace WindowsFormsApp1.View
         }
 
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {          
             foreach (Control x in this.Controls)
             {
                 if (x is TextBox && (string)x.Tag == "GenerWhenNeeded")
                 {
                     if (x.Text.Length >= 2)
                     {
-                        x.Tag = "ITSTIMETOSTOP";
+                        x.Tag = "RemoveWhenNotNeeded";
                         foreach (Control z in this.Controls)
                         {
                             if (z is PictureBox && (string)z.Tag == "AutoSizing")
@@ -347,6 +359,12 @@ namespace WindowsFormsApp1.View
                     }
                 }
             }
+            //Foreach For UnGenaration
+        }
+
+        private void Sync_Click(object sender, EventArgs e)
+        {
+            GetUserid();
         }
     }
 }

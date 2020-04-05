@@ -10,12 +10,23 @@ namespace WindowsFormsApp1.Bussiness
 {
     public class PersonAccountController
     {
-        public void Add(int Rid,int id)
+        private ApplicationContexts context;
+
+        public PersonAccountController(ApplicationContexts cont)
         {
-            ApplicationContexts context = new ApplicationContexts();
+            this.context = cont;
+        }
+
+        public PersonAccountController()
+        {
+
+        }
+
+        public void Add(int id)
+        {
             using (context)
             {
-                PersonAccount UserAccountBookAdding = new PersonAccount(){ PersonRegistersId = Rid,PersonBookTypesId = id };
+                PersonAccount UserAccountBookAdding = new PersonAccount(){ PersonBookTypesId = id };
 
                 context.PersonAccounts.Add(UserAccountBookAdding);
                 context.SaveChanges();

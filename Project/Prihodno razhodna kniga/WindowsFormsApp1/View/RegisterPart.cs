@@ -18,11 +18,10 @@ namespace WindowsFormsApp1.View
 {
     public partial class RegisterPart : Form
     {
-        PersonRegisterController User = new PersonRegisterController();
-        PersonBookTypeController UserBookType = new PersonBookTypeController();
-        RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController();
-        PersonAccountController UserAccount = new PersonAccountController();
-        ApplicationContext context = new ApplicationContext();
+        PersonRegisterController User = new PersonRegisterController(new ApplicationContexts());
+        PersonBookTypeController UserBookType = new PersonBookTypeController(new ApplicationContexts());
+        RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController(new ApplicationContexts());
+        PersonAccountController UserAccount = new PersonAccountController(new ApplicationContexts());
         RevenueExpeditureBook smallshop = new RevenueExpeditureBook();
         public RegisterPart()
         {
@@ -32,65 +31,53 @@ namespace WindowsFormsApp1.View
         public void Register_Click(object sender, EventArgs e)
         {
             LoginPart login = new LoginPart();
-            try
+            if (txtUsernameRegisterForm.Text == "" || txtPasswordRegisterForm.Text == "" || txtConfirmPasswordRegisterForm.Text == "" || Bookstypes.Text == "")
             {
-                if (txtUsernameRegisterForm.Text == "" || txtPasswordRegisterForm.Text == "" || txtConfirmPasswordRegisterForm.Text == "" || Bookstypes.Text == "")
+                MessageBox.Show("Please fill the rows to register");
+            }  
+            else
+            {
+                if (Bookstypes.Text == "Business")
                 {
-                    MessageBox.Show("Please fill the froms to register");
-                }
-                if (Bookstypes.Text == "Small Shop")
-                {
-                    if (txtPasswordRegisterForm.Text == txtConfirmPasswordRegisterForm.Text)
+                    if (txtPasswordRegisterForm.Text == txtConfirmPasswordRegisterForm.Text && txtPasswordRegisterForm.Text.Length != 0)
                     {
-                        User.Add(txtUsernameRegisterForm.Text, txtPasswordRegisterForm.Text);
-                        if(!(UserBookType.CheckIfExsist()))
+                        var CheckIfExists = User.CheckIfUsernameExists(txtUsernameRegisterForm.Text);
+                        if (!(CheckIfExists == txtUsernameRegisterForm.Text))
                         {
-                            var small = "Small Shop";
-                            //var medeum = "Medium Shop";
-                            //var Large = "Large Shop";
-                            UserBookType.Add(small, 1);
-                            //UserBookType.Add(medeum, 2);
-                            //UserBookType.Add(Large, 3);                          
+                            User.Add(txtUsernameRegisterForm.Text, txtPasswordRegisterForm.Text);
+                            if (!(UserBookType.CheckIfExsist()))
+                            {
+                                var business = "Business";
+                                UserBookType.Add(business, 1);
+                            }
+                            var a = User.GetAll();
+                            UserAccount.Add(1);
+                            BookForUser.Add(smallshop.GetTime(), 0, 0, 0, 0, 0, 0, 1, a.Count());
+                            this.Hide();
+                            login.Show();
+                            MessageBox.Show("Succsessfully registered");
                         }
-                        var a = User.GetAllIds();
-                        UserAccount.Add(a, 1);
-                        BookForUser.Add(smallshop.GetTime(),0, 0, 0, 0, 0, 0,1);
-                        this.Hide();
-                        login.Show();
-                        MessageBox.Show("Succsessfully registered");
+                        else
+                        {
+                            MessageBox.Show("This Username is taken");
+                        }
                     }
                     else
                     {
                         MessageBox.Show("Passswords doesn't match");
                     }
                 }
-                else if (Bookstypes.Text == "Medium Shop")
-                {
-
-                }
-                else if (Bookstypes.Text == "Large Shop")
-                {
-
-                }
                 else
                 {
                     MessageBox.Show("Passwords doesn't match");
-                }
 
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.InnerException.Message);
-            }
+                }
+            }       
         }
 
         public string GetBookType()
         {
             return Bookstypes.Text;
-        }
-        private void Message(object sender, EventArgs e)
-        {
-            MessageBox.Show("Small Shop - 2 checkouts" + Environment.NewLine + "Medium Shop - 4 checkouts" + Environment.NewLine + "Large Shop - 6 checkouts");
         }
 
         private void Return_Click(object sender, EventArgs e)

@@ -55,7 +55,7 @@
             // 
             this.txtUsernameRegisterForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.txtUsernameRegisterForm.Location = new System.Drawing.Point(213, 39);
-            this.txtUsernameRegisterForm.MaxLength = 20;
+            this.txtUsernameRegisterForm.MaxLength = 16;
             this.txtUsernameRegisterForm.Name = "txtUsernameRegisterForm";
             this.txtUsernameRegisterForm.Size = new System.Drawing.Size(175, 31);
             this.txtUsernameRegisterForm.TabIndex = 9;
@@ -116,14 +116,11 @@
             this.Bookstypes.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Bookstypes.FormattingEnabled = true;
             this.Bookstypes.Items.AddRange(new object[] {
-            "Small Shop",
-            "Medium Shop",
-            "Lagre Shop"});
+            "Business"});
             this.Bookstypes.Location = new System.Drawing.Point(212, 150);
             this.Bookstypes.Name = "Bookstypes";
             this.Bookstypes.Size = new System.Drawing.Size(175, 32);
             this.Bookstypes.TabIndex = 14;
-            this.Bookstypes.DropDown += new System.EventHandler(this.Message);
             // 
             // BookType
             // 
@@ -138,7 +135,7 @@
             // Return
             // 
             this.Return.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Return.Location = new System.Drawing.Point(2, 206);
+            this.Return.Location = new System.Drawing.Point(12, 206);
             this.Return.Name = "Return";
             this.Return.Size = new System.Drawing.Size(204, 70);
             this.Return.TabIndex = 16;

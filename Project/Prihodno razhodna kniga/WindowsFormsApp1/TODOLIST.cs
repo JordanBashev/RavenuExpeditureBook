@@ -8,6 +8,6 @@ namespace WindowsFormsApp1
 {
     class TODOLIST
     {
-        // napravi delete,add,update commandi ''modeli'';dovurshi register parta;informaciq na vseki ot shopovete koq kolona za kakvo e;(Ungenerate) metod,Redo Database,add delete in login for accounts;
+        //(Ungenerate) metod(WIP),Redo Database(Done),add delete in login for accounts(Optional);NUNIT tests(Half Done),FINSIH WHERE TO UPDATE PART(50% DONE);
     }
 }

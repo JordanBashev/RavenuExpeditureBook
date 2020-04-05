@@ -16,8 +16,6 @@ namespace WindowsFormsApp1.Data.Models
         [Required]
         public string BookType { get; set; }
 
-        [ForeignKey(nameof(Accounts))]
         public int PersonAccountId { get; set; }
-        public virtual PersonAccount Accounts { get; set; }
     }
 }
