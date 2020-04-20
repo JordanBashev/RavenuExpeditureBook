@@ -16,7 +16,6 @@ namespace WindowsFormsApp1.Data
 
         }
 
-
         public ApplicationContexts(DbContextOptions options)
             :base(options)
         {

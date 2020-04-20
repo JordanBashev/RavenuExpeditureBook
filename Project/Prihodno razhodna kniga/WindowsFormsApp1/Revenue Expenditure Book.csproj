@@ -250,7 +250,21 @@
       <DependentUpon>20200405120600_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextsModelSnapshot.cs" />
+    <Compile Include="RevenueAccountBookDataSet.cs">
+      <DependentUpon>RevenueAccountBookDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="RevenueAccountBookDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RevenueAccountBookDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="TODOLIST.cs" />
+    <Compile Include="View\GridView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\GridView.Designer.cs">
+      <DependentUpon>GridView.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\Information.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -277,6 +291,9 @@
     <Compile Include="View\RevenueExpeditureBook.Designer.cs">
       <DependentUpon>RevenueExpeditureBook.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\GridView.resx">
+      <DependentUpon>GridView.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>
     </EmbeddedResource>
@@ -308,6 +325,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="RevenueAccountBookDataSet.xsc">
+      <DependentUpon>RevenueAccountBookDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="RevenueAccountBookDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>RevenueAccountBookDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="RevenueAccountBookDataSet.xss">
+      <DependentUpon>RevenueAccountBookDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

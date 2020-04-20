@@ -31,15 +31,15 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(RevenueExpeditureBook));
             this.DatetimeLabel = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.RawMatLabel = new System.Windows.Forms.Label();
+            this.IncomeLabel = new System.Windows.Forms.Label();
+            this.Namelbl = new System.Windows.Forms.Label();
+            this.ExpenseLabel = new System.Windows.Forms.Label();
+            this.CountedLbl = new System.Windows.Forms.Label();
+            this.BalaanceLable = new System.Windows.Forms.Label();
+            this.CheckoutPlusMinuslbl = new System.Windows.Forms.Label();
             this.Income1 = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
+            this.Checkout1 = new System.Windows.Forms.Label();
             this.Income2 = new System.Windows.Forms.TextBox();
             this.Income3 = new System.Windows.Forms.TextBox();
             this.RamMat1 = new System.Windows.Forms.TextBox();
@@ -54,11 +54,11 @@
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.CheckOut = new System.Windows.Forms.TextBox();
             this.Sum = new System.Windows.Forms.Button();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
+            this.Datelbl = new System.Windows.Forms.Label();
+            this.Checkout2 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
+            this.Earningslbl = new System.Windows.Forms.Label();
+            this.AvailableFundslbl = new System.Windows.Forms.Label();
             this.textBox20 = new System.Windows.Forms.TextBox();
             this.textBox21 = new System.Windows.Forms.TextBox();
             this.textBox22 = new System.Windows.Forms.TextBox();
@@ -176,6 +176,9 @@
             this.RedAutoSizer = new System.Windows.Forms.PictureBox();
             this.label14 = new System.Windows.Forms.Label();
             this.Sync = new System.Windows.Forms.Button();
+            this.GridView = new System.Windows.Forms.Button();
+            this.Bulgarian = new System.Windows.Forms.Button();
+            this.English = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.LastLine)).BeginInit();
@@ -245,77 +248,77 @@
             this.DatetimeLabel.TabIndex = 0;
             this.DatetimeLabel.Text = "0";
             // 
-            // label1
+            // RawMatLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(330, 18);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(126, 24);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Raw Materials";
+            this.RawMatLabel.AutoSize = true;
+            this.RawMatLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.RawMatLabel.Location = new System.Drawing.Point(330, 18);
+            this.RawMatLabel.Name = "RawMatLabel";
+            this.RawMatLabel.Size = new System.Drawing.Size(126, 24);
+            this.RawMatLabel.TabIndex = 1;
+            this.RawMatLabel.Text = "Raw Materials";
             // 
-            // label2
+            // IncomeLabel
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(235, 18);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 24);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Income";
+            this.IncomeLabel.AutoSize = true;
+            this.IncomeLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.IncomeLabel.Location = new System.Drawing.Point(235, 18);
+            this.IncomeLabel.Name = "IncomeLabel";
+            this.IncomeLabel.Size = new System.Drawing.Size(73, 24);
+            this.IncomeLabel.TabIndex = 2;
+            this.IncomeLabel.Text = "Income";
             // 
-            // label3
+            // Namelbl
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.Window;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(85, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(61, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Name";
+            this.Namelbl.AutoSize = true;
+            this.Namelbl.BackColor = System.Drawing.SystemColors.Window;
+            this.Namelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Namelbl.Location = new System.Drawing.Point(85, 18);
+            this.Namelbl.Name = "Namelbl";
+            this.Namelbl.Size = new System.Drawing.Size(61, 24);
+            this.Namelbl.TabIndex = 3;
+            this.Namelbl.Text = "Name";
             // 
-            // label4
+            // ExpenseLabel
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(478, 18);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(86, 24);
-            this.label4.TabIndex = 4;
-            this.label4.Text = "Expense";
+            this.ExpenseLabel.AutoSize = true;
+            this.ExpenseLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.ExpenseLabel.Location = new System.Drawing.Point(478, 18);
+            this.ExpenseLabel.Name = "ExpenseLabel";
+            this.ExpenseLabel.Size = new System.Drawing.Size(86, 24);
+            this.ExpenseLabel.TabIndex = 4;
+            this.ExpenseLabel.Text = "Expense";
             // 
-            // label5
+            // CountedLbl
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(686, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(82, 24);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "Counted";
+            this.CountedLbl.AutoSize = true;
+            this.CountedLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CountedLbl.Location = new System.Drawing.Point(691, 18);
+            this.CountedLbl.Name = "CountedLbl";
+            this.CountedLbl.Size = new System.Drawing.Size(82, 24);
+            this.CountedLbl.TabIndex = 5;
+            this.CountedLbl.Text = "Counted";
             // 
-            // label6
+            // BalaanceLable
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label6.Location = new System.Drawing.Point(586, 18);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(78, 24);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Balance";
+            this.BalaanceLable.AutoSize = true;
+            this.BalaanceLable.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.BalaanceLable.Location = new System.Drawing.Point(586, 18);
+            this.BalaanceLable.Name = "BalaanceLable";
+            this.BalaanceLable.Size = new System.Drawing.Size(78, 24);
+            this.BalaanceLable.TabIndex = 6;
+            this.BalaanceLable.Text = "Balance";
             // 
-            // label7
+            // CheckoutPlusMinuslbl
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label7.Location = new System.Drawing.Point(842, 657);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(107, 24);
-            this.label7.TabIndex = 7;
-            this.label7.Tag = "LastRows";
-            this.label7.Text = "Checkout+-";
+            this.CheckoutPlusMinuslbl.AutoSize = true;
+            this.CheckoutPlusMinuslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.CheckoutPlusMinuslbl.Location = new System.Drawing.Point(842, 657);
+            this.CheckoutPlusMinuslbl.Name = "CheckoutPlusMinuslbl";
+            this.CheckoutPlusMinuslbl.Size = new System.Drawing.Size(107, 24);
+            this.CheckoutPlusMinuslbl.TabIndex = 7;
+            this.CheckoutPlusMinuslbl.Tag = "LastRows";
+            this.CheckoutPlusMinuslbl.Text = "Checkout+-";
             // 
             // Income1
             // 
@@ -331,16 +334,16 @@
             this.Income1.Text = "0";
             this.Income1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // label8
+            // Checkout1
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.Window;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label8.Location = new System.Drawing.Point(7, 76);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(210, 25);
-            this.label8.TabIndex = 9;
-            this.label8.Text = "Funds In Checkout 1";
+            this.Checkout1.AutoSize = true;
+            this.Checkout1.BackColor = System.Drawing.SystemColors.Window;
+            this.Checkout1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Checkout1.Location = new System.Drawing.Point(7, 76);
+            this.Checkout1.Name = "Checkout1";
+            this.Checkout1.Size = new System.Drawing.Size(210, 25);
+            this.Checkout1.TabIndex = 9;
+            this.Checkout1.Text = "Funds In Checkout 1";
             // 
             // Income2
             // 
@@ -528,27 +531,27 @@
             this.Sum.UseVisualStyleBackColor = true;
             this.Sum.Click += new System.EventHandler(this.Sum_Click);
             // 
-            // label9
+            // Datelbl
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.Window;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label9.Location = new System.Drawing.Point(822, 18);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(53, 24);
-            this.label9.TabIndex = 27;
-            this.label9.Text = "Date:";
+            this.Datelbl.AutoSize = true;
+            this.Datelbl.BackColor = System.Drawing.SystemColors.Window;
+            this.Datelbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Datelbl.Location = new System.Drawing.Point(822, 18);
+            this.Datelbl.Name = "Datelbl";
+            this.Datelbl.Size = new System.Drawing.Size(53, 24);
+            this.Datelbl.TabIndex = 27;
+            this.Datelbl.Text = "Date:";
             // 
-            // label10
+            // Checkout2
             // 
-            this.label10.AutoSize = true;
-            this.label10.BackColor = System.Drawing.SystemColors.Window;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label10.Location = new System.Drawing.Point(6, 135);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(210, 25);
-            this.label10.TabIndex = 28;
-            this.label10.Text = "Funds In Checkout 2";
+            this.Checkout2.AutoSize = true;
+            this.Checkout2.BackColor = System.Drawing.SystemColors.Window;
+            this.Checkout2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Checkout2.Location = new System.Drawing.Point(6, 135);
+            this.Checkout2.Name = "Checkout2";
+            this.Checkout2.Size = new System.Drawing.Size(210, 25);
+            this.Checkout2.TabIndex = 28;
+            this.Checkout2.Text = "Funds In Checkout 2";
             // 
             // label11
             // 
@@ -560,30 +563,30 @@
             this.label11.Size = new System.Drawing.Size(0, 25);
             this.label11.TabIndex = 29;
             // 
-            // label12
+            // Earningslbl
             // 
-            this.label12.AutoSize = true;
-            this.label12.BackColor = System.Drawing.SystemColors.Window;
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label12.Location = new System.Drawing.Point(6, 246);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(108, 29);
-            this.label12.TabIndex = 30;
-            this.label12.Tag = "Stationary";
-            this.label12.Text = "Earnings";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.Earningslbl.AutoSize = true;
+            this.Earningslbl.BackColor = System.Drawing.SystemColors.Window;
+            this.Earningslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Earningslbl.Location = new System.Drawing.Point(6, 246);
+            this.Earningslbl.Name = "Earningslbl";
+            this.Earningslbl.Size = new System.Drawing.Size(108, 29);
+            this.Earningslbl.TabIndex = 30;
+            this.Earningslbl.Tag = "Stationary";
+            this.Earningslbl.Text = "Earnings";
+            this.Earningslbl.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label13
+            // AvailableFundslbl
             // 
-            this.label13.AutoSize = true;
-            this.label13.BackColor = System.Drawing.SystemColors.Window;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label13.Location = new System.Drawing.Point(6, 194);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(166, 25);
-            this.label13.TabIndex = 31;
-            this.label13.Tag = "Stationary";
-            this.label13.Text = "Available Funds";
+            this.AvailableFundslbl.AutoSize = true;
+            this.AvailableFundslbl.BackColor = System.Drawing.SystemColors.Window;
+            this.AvailableFundslbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.AvailableFundslbl.Location = new System.Drawing.Point(6, 194);
+            this.AvailableFundslbl.Name = "AvailableFundslbl";
+            this.AvailableFundslbl.Size = new System.Drawing.Size(166, 25);
+            this.AvailableFundslbl.TabIndex = 31;
+            this.AvailableFundslbl.Tag = "Stationary";
+            this.AvailableFundslbl.Text = "Available Funds";
             // 
             // textBox20
             // 
@@ -1279,7 +1282,7 @@
             // pictureBox14
             // 
             this.pictureBox14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox14.BackgroundImage")));
-            this.pictureBox14.Location = new System.Drawing.Point(774, 4);
+            this.pictureBox14.Location = new System.Drawing.Point(779, 4);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(10, 748);
             this.pictureBox14.TabIndex = 96;
@@ -1777,7 +1780,7 @@
             // timer1
             // 
             this.timer1.Interval = 10;
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timer1.Tick += new System.EventHandler(this.Timer1_Tick);
             // 
             // textBox1
             // 
@@ -1824,7 +1827,7 @@
             // pictureBox49
             // 
             this.pictureBox49.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox49.BackgroundImage")));
-            this.pictureBox49.Location = new System.Drawing.Point(774, 693);
+            this.pictureBox49.Location = new System.Drawing.Point(779, 693);
             this.pictureBox49.Name = "pictureBox49";
             this.pictureBox49.Size = new System.Drawing.Size(10, 59);
             this.pictureBox49.TabIndex = 149;
@@ -1911,6 +1914,39 @@
             this.Sync.Text = "Synchronize";
             this.Sync.UseVisualStyleBackColor = true;
             this.Sync.Click += new System.EventHandler(this.Sync_Click);
+            // 
+            // GridView
+            // 
+            this.GridView.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.GridView.Location = new System.Drawing.Point(779, 349);
+            this.GridView.Name = "GridView";
+            this.GridView.Size = new System.Drawing.Size(222, 64);
+            this.GridView.TabIndex = 158;
+            this.GridView.Text = "View";
+            this.GridView.UseVisualStyleBackColor = true;
+            this.GridView.Click += new System.EventHandler(this.GridView_Click);
+            // 
+            // Bulgarian
+            // 
+            this.Bulgarian.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.Bulgarian.Location = new System.Drawing.Point(779, 465);
+            this.Bulgarian.Name = "Bulgarian";
+            this.Bulgarian.Size = new System.Drawing.Size(222, 64);
+            this.Bulgarian.TabIndex = 159;
+            this.Bulgarian.Text = "Bulgarian";
+            this.Bulgarian.UseVisualStyleBackColor = true;
+            this.Bulgarian.Click += new System.EventHandler(this.Bulgarian_Click);
+            // 
+            // English
+            // 
+            this.English.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.English.Location = new System.Drawing.Point(779, 407);
+            this.English.Name = "English";
+            this.English.Size = new System.Drawing.Size(222, 64);
+            this.English.TabIndex = 160;
+            this.English.Text = "English";
+            this.English.UseVisualStyleBackColor = true;
+            this.English.Click += new System.EventHandler(this.English_Click);
             // 
             // RevenueExpeditureBook
             // 
@@ -2011,10 +2047,10 @@
             this.Controls.Add(this.Income6);
             this.Controls.Add(this.Income5);
             this.Controls.Add(this.Income4);
-            this.Controls.Add(this.label13);
-            this.Controls.Add(this.label12);
+            this.Controls.Add(this.AvailableFundslbl);
+            this.Controls.Add(this.Earningslbl);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.label10);
+            this.Controls.Add(this.Checkout2);
             this.Controls.Add(this.DatetimeLabel);
             this.Controls.Add(this.Sum);
             this.Controls.Add(this.CheckOut);
@@ -2029,16 +2065,16 @@
             this.Controls.Add(this.RamMat1);
             this.Controls.Add(this.Income3);
             this.Controls.Add(this.Income2);
-            this.Controls.Add(this.label8);
+            this.Controls.Add(this.Checkout1);
             this.Controls.Add(this.Income1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.label9);
+            this.Controls.Add(this.CheckoutPlusMinuslbl);
+            this.Controls.Add(this.BalaanceLable);
+            this.Controls.Add(this.CountedLbl);
+            this.Controls.Add(this.ExpenseLabel);
+            this.Controls.Add(this.Namelbl);
+            this.Controls.Add(this.IncomeLabel);
+            this.Controls.Add(this.RawMatLabel);
+            this.Controls.Add(this.Datelbl);
             this.Controls.Add(this.GreeenBox);
             this.Controls.Add(this.pictureBox44);
             this.Controls.Add(this.GrenBox);
@@ -2064,6 +2100,9 @@
             this.Controls.Add(this.RedAutoSizer);
             this.Controls.Add(this.LightRedAutoSizer);
             this.Controls.Add(this.Sync);
+            this.Controls.Add(this.GridView);
+            this.Controls.Add(this.English);
+            this.Controls.Add(this.Bulgarian);
             this.Name = "RevenueExpeditureBook";
             this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Tag = "";
@@ -2133,15 +2172,15 @@
         #endregion
 
         private System.Windows.Forms.Label DatetimeLabel;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label RawMatLabel;
+        private System.Windows.Forms.Label IncomeLabel;
+        private System.Windows.Forms.Label Namelbl;
+        private System.Windows.Forms.Label ExpenseLabel;
+        private System.Windows.Forms.Label CountedLbl;
+        private System.Windows.Forms.Label BalaanceLable;
+        private System.Windows.Forms.Label CheckoutPlusMinuslbl;
         private System.Windows.Forms.TextBox Income1;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label Checkout1;
         private System.Windows.Forms.TextBox Income2;
         private System.Windows.Forms.TextBox Income3;
         private System.Windows.Forms.TextBox RamMat1;
@@ -2156,11 +2195,11 @@
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox CheckOut;
         private System.Windows.Forms.Button Sum;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label Datelbl;
+        private System.Windows.Forms.Label Checkout2;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Label Earningslbl;
+        private System.Windows.Forms.Label AvailableFundslbl;
         private System.Windows.Forms.TextBox textBox20;
         private System.Windows.Forms.TextBox textBox21;
         private System.Windows.Forms.TextBox textBox22;
@@ -2278,5 +2317,8 @@
         private System.Windows.Forms.PictureBox RedAutoSizer;
         public System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button Sync;
+        private System.Windows.Forms.Button GridView;
+        private System.Windows.Forms.Button Bulgarian;
+        private System.Windows.Forms.Button English;
     }
 }

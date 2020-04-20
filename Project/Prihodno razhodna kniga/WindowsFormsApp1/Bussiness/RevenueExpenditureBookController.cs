@@ -23,8 +23,6 @@ namespace WindowsFormsApp1.Bussiness
 
         }
 
-        int counter = 0;
-
         public RevenueExpenditureBook Get(int id)
         {
             var FindId = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Id == id);
@@ -33,13 +31,12 @@ namespace WindowsFormsApp1.Bussiness
 
         public void Add(DateTime date, decimal income, decimal rawmaterials, decimal expenses, decimal balance, decimal counted, decimal checkout, int accountId, int Userid)
         {
-            using (contexts)
-            {
-                RevenueExpenditureBook BookCreation = new RevenueExpenditureBook() { Date = date, Income = income, RawMaterials = rawmaterials, Expense = expenses, Balance = balance, Counted = counted, CheckOutPlusAndMinus = checkout, AccountRavenueBookId = accountId, UserRegisteredId = Userid };
 
-                contexts.RevenueExpenditureBooks.Add(BookCreation);
-                contexts.SaveChanges();
-            }
+            RevenueExpenditureBook BookCreation = new RevenueExpenditureBook() { Date = date, Income = income, RawMaterials = rawmaterials, Expense = expenses, Balance = balance, Counted = counted, CheckOutPlusAndMinus = checkout, AccountRavenueBookId = accountId, UserRegisteredId = Userid };
+
+            contexts.RevenueExpenditureBooks.Add(BookCreation);
+            contexts.SaveChanges();
+
         }
 
         public void Update(DateTime date, decimal income, decimal rawmaterials, decimal expenses, decimal balance, decimal counted, decimal checkout, int accountid, int userid)
@@ -49,23 +46,19 @@ namespace WindowsFormsApp1.Bussiness
 
             var getuserid = contexts.RevenueExpenditureBooks.OrderByDescending(x => x.Date).FirstOrDefault(x => x.UserRegisteredId == userid);
 
-            // var GetId = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Date == date);
-
             var Id = this.Get(getuserid.Id);
             update = BookCreation;
             update.Id = Id.Id;
 
             contexts.Entry(Id).CurrentValues.SetValues(update);
             contexts.SaveChanges();
-
         }
 
-        public void Delete()
+        public void Delete(int deletebyuserid)
         {
-            counter = counter + 1;
-            int counterino = counter;
-            var Deleted = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Id == counterino);
-            contexts.Remove(Deleted);
+            var getuserid = contexts.PersonRegisters.FirstOrDefault(x => x.Id == deletebyuserid);
+            var Deleted = contexts.RevenueExpenditureBooks.Where(x => x.UserRegisteredId == getuserid.Id).AsEnumerable();
+            contexts.RemoveRange(Deleted);
             contexts.SaveChanges();
         }
     }

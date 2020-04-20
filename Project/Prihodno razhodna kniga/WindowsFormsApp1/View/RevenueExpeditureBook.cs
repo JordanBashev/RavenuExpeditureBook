@@ -16,7 +16,11 @@ namespace WindowsFormsApp1.View
     {
 
         RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController(new ApplicationContexts());
+        PersonAccountController PersonAccount = new PersonAccountController(new ApplicationContexts());
+        PersonRegisterController PersonRegister = new PersonRegisterController(new ApplicationContexts());
+
         ApplicationContexts contexts = new ApplicationContexts();
+
         public RevenueExpeditureBook()
         {
             InitializeComponent();
@@ -29,8 +33,14 @@ namespace WindowsFormsApp1.View
             var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
             var getthisid = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.UserRegisteredId == getusernameid.Id);
             var GetCountedFromYesterday = contexts.RevenueExpenditureBooks.Where(x => x.UserRegisteredId == getthisid.Id).FirstOrDefault(x => x.Date == GetTime().AddDays(-1));
-            return Income1.Text = GetCountedFromYesterday.Counted.ToString();
-            
+            if(GetCountedFromYesterday == null)
+            {
+                return Income1.Text = "0";
+            }
+            else
+            {
+                return Income1.Text = GetCountedFromYesterday.Counted.ToString();
+            }
         }
 
         public string GetIncomeValue()
@@ -131,8 +141,8 @@ namespace WindowsFormsApp1.View
 
         private void UpdateDB_Click(object sender, EventArgs e)
         {
-            var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
-            var getthisid = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.UserRegisteredId == getusernameid.Id);
+            var getIdByUsername = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
+            var getThisId = contexts.RevenueExpenditureBooks.Where(x => x.Date == GetTime()).FirstOrDefault(x => x.UserRegisteredId == getIdByUsername.Id);
             var CheckForDateTrue = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Date == GetTime());
             var Income = decimal.Parse(GetIncomeValue());
             var RawMaterial = decimal.Parse(GetRawMaterialsValue());
@@ -140,25 +150,34 @@ namespace WindowsFormsApp1.View
             var Balance = decimal.Parse(GetBalanceValue());
             var Counted = decimal.Parse(GetCountedValue());
             var CheckOut = decimal.Parse(GetCheckoutValue());
-            if (CheckForDateTrue == null) 
+            if (CheckForDateTrue == null || getThisId == null) 
             {
-                BookForUser.Add(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getusernameid.Id);
+                BookForUser.Add(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getIdByUsername.Id);
                 MessageBox.Show("Database updated succsesfully");
             }
-            else if (CheckForDateTrue.Date == GetTime() && getusernameid.Id == getthisid.Id)
+            else if (CheckForDateTrue.Date == GetTime() && getIdByUsername.Id == getThisId.UserRegisteredId)
             {
-                BookForUser.Update(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getusernameid.Id);
+                BookForUser.Update(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getIdByUsername.Id);
                 MessageBox.Show("Database updated succsesfully");
             }
         }
 
         private void DeleteDB_Click(object sender, EventArgs e)
         {
-            BookForUser.Delete();
-            MessageBox.Show("Deleted from database succsesfully");
+            LoginPart login = new LoginPart();
+            if (MessageBox.Show("Are you sure you want to delete your account", "", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                var getIdByUsernameToDelete = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
+                BookForUser.Delete(getIdByUsernameToDelete.Id);
+                PersonAccount.Delete(getIdByUsernameToDelete.Id);
+                PersonRegister.Delete(getIdByUsernameToDelete.Id);
+                MessageBox.Show("Account deleted succsesfully!");
+                this.Hide();
+                login.Show();
+            }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
+        private void Timer1_Tick(object sender, EventArgs e)
         {          
             foreach (Control x in this.Controls)
             {
@@ -198,17 +217,21 @@ namespace WindowsFormsApp1.View
                             }
                         }
                         //Horizontal Black Lines
-                        PictureBox pic1 = new PictureBox();
-                        pic1.Location = new Point(UsingForCreation.Location.X, UsingForCreation.Location.Y - 57);
-                        pic1.Size = new Size(UsingForCreation.Size.Width, UsingForCreation.Size.Height);
-                        pic1.BackColor = Color.Black;
+                        PictureBox pic1 = new PictureBox
+                        {
+                            Location = new Point(UsingForCreation.Location.X, UsingForCreation.Location.Y - 57),
+                            Size = new Size(UsingForCreation.Size.Width, UsingForCreation.Size.Height),
+                            BackColor = Color.Black
+                        };
                         Controls.Owner.Controls.Add(pic1);
                         pic1.BringToFront();
 
-                        PictureBox pic2 = new PictureBox();
-                        pic2.Location = new Point(UsingForCreation.Location.X, UsingForCreation.Location.Y);
-                        pic2.Size = new Size(UsingForCreation.Size.Width, UsingForCreation.Size.Height);
-                        pic2.BackColor = Color.Black;
+                        PictureBox pic2 = new PictureBox
+                        {
+                            Location = new Point(UsingForCreation.Location.X, UsingForCreation.Location.Y),
+                            Size = new Size(UsingForCreation.Size.Width, UsingForCreation.Size.Height),
+                            BackColor = Color.Black
+                        };
                         Controls.Owner.Controls.Add(pic2);
                         pic2.BringToFront();
                         //Horizontal Black Lines
@@ -219,28 +242,34 @@ namespace WindowsFormsApp1.View
 
 
                         //TEXTBOXES Generetor
-                        TextBox txtbox = new TextBox();
-                        txtbox.BorderStyle = new BorderStyle();
-                        txtbox.Size = new Size(UsingForSizeAndLocation.Size.Width, UsingForSizeAndLocation.Size.Height);
-                        txtbox.Location = new Point(10, UsingForCreation.Location.Y - 41);
-                        txtbox.Font = new Font("Microsoft Sans Serif", 18);
-                        txtbox.Tag = "GenerWhenNeeded";
+                        TextBox txtbox = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            Size = new Size(UsingForSizeAndLocation.Size.Width, UsingForSizeAndLocation.Size.Height),
+                            Location = new Point(10, UsingForCreation.Location.Y - 41),
+                            Font = new Font("Microsoft Sans Serif", 18),
+                            Tag = "GenerWhenNeeded"
+                        };
                         Controls.Owner.Controls.Add(txtbox);
 
 
-                        TextBox txtbox1 = new TextBox();
-                        txtbox1.BorderStyle = new BorderStyle();
-                        txtbox1.Size = new Size(UsingForSizeAndLocation.Size.Width, UsingForSizeAndLocation.Size.Height);
-                        txtbox1.Location = new Point(10, UsingForCreation.Location.Y - (49 * 2));
-                        txtbox1.Font = new Font("Microsoft Sans Serif", 18);
+                        TextBox txtbox1 = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            Size = new Size(UsingForSizeAndLocation.Size.Width, UsingForSizeAndLocation.Size.Height),
+                            Location = new Point(10, UsingForCreation.Location.Y - (49 * 2)),
+                            Font = new Font("Microsoft Sans Serif", 18)
+                        };
                         Controls.Owner.Controls.Add(txtbox1);
                         //TEXTBOXES Generetor
 
                         //INCOME  Generetor
-                        TextBox incomebox = new TextBox();
-                        incomebox.BorderStyle = new BorderStyle();
-                        incomebox.BackColor = Color.LightGreen;
-                        incomebox.TextAlign = HorizontalAlignment.Center;
+                        TextBox incomebox = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            BackColor = Color.LightGreen,
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         incomebox.Text += "0";
                         incomebox.Size = new Size(Income11.Size.Width, Income11.Size.Height);
                         incomebox.Location = new Point(223, txtbox.Location.Y);
@@ -249,10 +278,12 @@ namespace WindowsFormsApp1.View
                         Controls.Owner.Controls.Add(incomebox);
 
 
-                        TextBox incomebox1 = new TextBox();
-                        incomebox1.BorderStyle = new BorderStyle();
-                        incomebox1.BackColor = Color.LightGreen;
-                        incomebox1.TextAlign = HorizontalAlignment.Center;
+                        TextBox incomebox1 = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            BackColor = Color.LightGreen,
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         incomebox1.Text += "0";
                         incomebox1.Size = new Size(Income11.Size.Width, Income11.Size.Height);
                         incomebox1.Location = new Point(223, txtbox1.Location.Y);
@@ -262,10 +293,12 @@ namespace WindowsFormsApp1.View
                         //INCOME Generetor
 
                         //RAWMATERIALS Generetor
-                        TextBox RawMatbox = new TextBox();
-                        RawMatbox.BorderStyle = new BorderStyle();
-                        RawMatbox.BackColor = Color.LightCoral;
-                        RawMatbox.TextAlign = HorizontalAlignment.Center;
+                        TextBox RawMatbox = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            BackColor = Color.LightCoral,
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         RawMatbox.Text += "0";
                         RawMatbox.Size = new Size(RamMat11.Size.Width, RamMat11.Size.Height);
                         RawMatbox.Location = new Point(329, txtbox.Location.Y);
@@ -274,10 +307,12 @@ namespace WindowsFormsApp1.View
                         Controls.Owner.Controls.Add(RawMatbox);
 
 
-                        TextBox RawMatbox1 = new TextBox();
-                        RawMatbox1.BorderStyle = new BorderStyle();
-                        RawMatbox1.BackColor = Color.LightCoral;
-                        RawMatbox1.TextAlign = HorizontalAlignment.Center;
+                        TextBox RawMatbox1 = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            BackColor = Color.LightCoral,
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         RawMatbox1.Text += "0";
                         RawMatbox1.Size = new Size(RamMat11.Size.Width, RamMat11.Size.Height);
                         RawMatbox1.Location = new Point(329, txtbox1.Location.Y);
@@ -287,10 +322,12 @@ namespace WindowsFormsApp1.View
                         //RAWMATERIALS Generetor
 
                         //EXPENSES Generetor
-                        TextBox expensesbox = new TextBox();
-                        expensesbox.BorderStyle = new BorderStyle();
-                        expensesbox.BackColor = Color.Red;
-                        expensesbox.TextAlign = HorizontalAlignment.Center;
+                        TextBox expensesbox = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            BackColor = Color.Red,
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         expensesbox.Text += "0";
                         expensesbox.Size = new Size(Expense11.Size.Width, Expense11.Size.Height);
                         expensesbox.Location = new Point(467, txtbox.Location.Y);
@@ -299,10 +336,12 @@ namespace WindowsFormsApp1.View
                         Controls.Owner.Controls.Add(expensesbox);
 
 
-                        TextBox expensesbox1 = new TextBox();
-                        expensesbox1.BorderStyle = new BorderStyle();
-                        expensesbox1.BackColor = Color.Red;
-                        expensesbox1.TextAlign = HorizontalAlignment.Center;
+                        TextBox expensesbox1 = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            BackColor = Color.Red,
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         expensesbox1.Text += "0";
                         expensesbox1.Size = new Size(Expense11.Size.Width, Expense11.Size.Height);
                         expensesbox1.Location = new Point(467, txtbox1.Location.Y);
@@ -312,18 +351,22 @@ namespace WindowsFormsApp1.View
                         //EXPENSES Generetor
 
                         //BALANCEBOXES Generetor
-                        TextBox balancebox = new TextBox();
-                        balancebox.BorderStyle = new BorderStyle();
-                        balancebox.TextAlign = HorizontalAlignment.Center;
+                        TextBox balancebox = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         balancebox.Text += "0";
                         balancebox.Size = new Size(BalanseUsingForSize.Size.Width, BalanseUsingForSize.Size.Height);
                         balancebox.Location = new Point(579, txtbox.Location.Y);
                         balancebox.Font = new Font("Microsoft Sans Serif", 18);
                         Controls.Owner.Controls.Add(balancebox);
 
-                        TextBox balancebox1 = new TextBox();
-                        balancebox1.BorderStyle = new BorderStyle();
-                        balancebox1.TextAlign = HorizontalAlignment.Center;
+                        TextBox balancebox1 = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            TextAlign = HorizontalAlignment.Center
+                        };
                         balancebox1.Text += "0";
                         balancebox1.Size = new Size(BalanseUsingForSize.Size.Width, BalanseUsingForSize.Size.Height);
                         balancebox1.Location = new Point(579, txtbox1.Location.Y);
@@ -332,22 +375,26 @@ namespace WindowsFormsApp1.View
                         //(BALANCE)BOXES Generetor
 
                         //(COUNTED)BOXES Generetor
-                        TextBox countedbox = new TextBox();
-                        countedbox.BorderStyle = new BorderStyle();
-                        countedbox.TextAlign = HorizontalAlignment.Center;
-                        countedbox.Text = "0";
-                        countedbox.Size = new Size(CountedusingforSize.Size.Width, CountedusingforSize.Size.Height);
-                        countedbox.Location = new Point(679, txtbox.Location.Y);
-                        countedbox.Font = new Font("Microsoft Sans Serif", 18);
+                        TextBox countedbox = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            TextAlign = HorizontalAlignment.Center,
+                            Text = "0",
+                            Size = new Size(CountedusingforSize.Size.Width, CountedusingforSize.Size.Height),
+                            Location = new Point(679, txtbox.Location.Y),
+                            Font = new Font("Microsoft Sans Serif", 18)
+                        };
                         Controls.Owner.Controls.Add(countedbox);
 
-                        TextBox countedbox1 = new TextBox();
-                        countedbox1.BorderStyle = new BorderStyle();
-                        countedbox1.TextAlign = HorizontalAlignment.Center;
-                        countedbox1.Text = "0";
-                        countedbox1.Size = new Size(CountedusingforSize.Size.Width, CountedusingforSize.Size.Height);
-                        countedbox1.Location = new Point(679, txtbox1.Location.Y);
-                        countedbox1.Font = new Font("Microsoft Sans Serif", 18);
+                        TextBox countedbox1 = new TextBox
+                        {
+                            BorderStyle = new BorderStyle(),
+                            TextAlign = HorizontalAlignment.Center,
+                            Text = "0",
+                            Size = new Size(CountedusingforSize.Size.Width, CountedusingforSize.Size.Height),
+                            Location = new Point(679, txtbox1.Location.Y),
+                            Font = new Font("Microsoft Sans Serif", 18)
+                        };
                         Controls.Owner.Controls.Add(countedbox1);
                         //(COUNTED)BOXES Generetor
 
@@ -365,6 +412,62 @@ namespace WindowsFormsApp1.View
         private void Sync_Click(object sender, EventArgs e)
         {
             GetUserid();
+        }
+
+        private void GridView_Click(object sender, EventArgs e)
+        {
+            GridView view = new GridView();
+            view.Show();
+        }
+
+        private void English_Click(object sender, EventArgs e)
+        {
+            if(Namelbl.Text == "Name")
+            {
+                MessageBox.Show("Language is already in english");
+            }
+            else
+            {
+                Namelbl.Text = "Name";
+                Checkout1.Text = "Funds In Checkout 1";
+                Checkout2.Text = "Funds In Checkout 2";
+                CheckoutPlusMinuslbl.Text = "Checkout+-";
+                AvailableFundslbl.Text = "Available Funds";
+                Earningslbl.Text = "Earnings";
+                IncomeLabel.Text = "Income";
+                RawMatLabel.Text = "Raw Materials";
+                ExpenseLabel.Text = "Expense";
+                CountedLbl.Text = "Counted";
+                CountedLbl.Location = new Point(CountedLbl.Location.X + 10, CountedLbl.Location.Y);
+                BalaanceLable.Text = "Balance";
+                Datelbl.Text = "Date:  ";
+                Datelbl.Location = new Point(Datelbl.Location.X + 5, Datelbl.Location.Y);
+            }
+        }
+
+        private void Bulgarian_Click(object sender, EventArgs e)
+        {
+            if(Namelbl.Text == "Име")
+            {
+                MessageBox.Show("Езикът е на български");
+            }
+            else
+            {
+                Namelbl.Text = "Име";
+                Checkout1.Text = "Пари в каса 1";
+                Checkout2.Text = "Пари в каса 2";
+                CheckoutPlusMinuslbl.Text = "Каса+-";
+                AvailableFundslbl.Text = "Налични пари";
+                Earningslbl.Text = "Оборот";
+                IncomeLabel.Text = "Приход";
+                RawMatLabel.Text = "  Суровини";
+                ExpenseLabel.Text = "Разход";
+                CountedLbl.Text = "Изброени";
+                CountedLbl.Location = new Point(CountedLbl.Location.X - 10, CountedLbl.Location.Y);
+                BalaanceLable.Text = "Салдо";
+                Datelbl.Text = "Дата:  ";
+                Datelbl.Location = new Point(Datelbl.Location.X - 5, Datelbl.Location.Y);
+            }           
         }
     }
 }

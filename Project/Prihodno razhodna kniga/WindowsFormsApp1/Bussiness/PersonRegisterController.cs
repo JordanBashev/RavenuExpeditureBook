@@ -45,5 +45,15 @@ namespace WindowsFormsApp1.Bussiness
             context.PersonRegisters.Add(UserAdding);
             context.SaveChanges();
         }
+
+        public void Delete(int id)
+        {
+            using (context)
+            {
+                var getuserid = context.PersonRegisters.FirstOrDefault(x => x.Id == id);
+                context.Remove(getuserid);
+                context.SaveChanges();
+            }
+        }
     }
 }
