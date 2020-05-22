@@ -745,7 +745,7 @@
             this.Income4.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Income4.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Income4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Income4.Location = new System.Drawing.Point(226, 246);
+            this.Income4.Location = new System.Drawing.Point(226, 247);
             this.Income4.Name = "Income4";
             this.Income4.Size = new System.Drawing.Size(97, 28);
             this.Income4.TabIndex = 32;
@@ -882,7 +882,7 @@
             this.Income10.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Income10.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Income10.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Income10.Location = new System.Drawing.Point(226, 596);
+            this.Income10.Location = new System.Drawing.Point(223, 596);
             this.Income10.Name = "Income10";
             this.Income10.Size = new System.Drawing.Size(97, 28);
             this.Income10.TabIndex = 54;
@@ -896,7 +896,7 @@
             this.Income9.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Income9.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Income9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Income9.Location = new System.Drawing.Point(226, 537);
+            this.Income9.Location = new System.Drawing.Point(223, 536);
             this.Income9.Name = "Income9";
             this.Income9.Size = new System.Drawing.Size(97, 28);
             this.Income9.TabIndex = 53;
@@ -910,7 +910,7 @@
             this.Income8.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Income8.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Income8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Income8.Location = new System.Drawing.Point(226, 478);
+            this.Income8.Location = new System.Drawing.Point(223, 478);
             this.Income8.Name = "Income8";
             this.Income8.Size = new System.Drawing.Size(97, 28);
             this.Income8.TabIndex = 52;
@@ -965,7 +965,7 @@
             this.Income7.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Income7.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Income7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Income7.Location = new System.Drawing.Point(226, 420);
+            this.Income7.Location = new System.Drawing.Point(223, 420);
             this.Income7.Name = "Income7";
             this.Income7.Size = new System.Drawing.Size(102, 28);
             this.Income7.TabIndex = 47;
@@ -1147,7 +1147,7 @@
             this.Income11.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Income11.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.Income11.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.Income11.Location = new System.Drawing.Point(226, 653);
+            this.Income11.Location = new System.Drawing.Point(223, 653);
             this.Income11.Name = "Income11";
             this.Income11.Size = new System.Drawing.Size(97, 28);
             this.Income11.TabIndex = 77;

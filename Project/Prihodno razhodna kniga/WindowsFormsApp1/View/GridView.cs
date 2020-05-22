@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace WindowsFormsApp1.View
@@ -24,20 +17,20 @@ namespace WindowsFormsApp1.View
 
         }
 
-        private void fillByToolStripButton_Click(object sender, EventArgs e)
+        private void FillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
-                this.revenueExpenditureBooksTableAdapter.FillBy(this.revenueAccountBookDataSet.RevenueExpenditureBooks, ((int)(System.Convert.ChangeType(spartaToolStripTextBox.Text, typeof(int)))));
+                this.revenueExpenditureBooksTableAdapter.FillBy(this.revenueAccountBookDataSet.RevenueExpenditureBooks, ((int)(Convert.ChangeType(spartaToolStripTextBox.Text, typeof(int)))));
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
+                MessageBox.Show(ex.Message);
             }
 
         }
 
-        private void fillByToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        private void FillByToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }

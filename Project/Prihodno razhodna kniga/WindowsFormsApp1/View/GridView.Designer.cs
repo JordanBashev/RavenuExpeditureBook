@@ -1,4 +1,6 @@
-﻿namespace WindowsFormsApp1.View
+﻿using WindowsFormsApp1.Data;
+
+namespace WindowsFormsApp1.View
 {
     partial class GridView
     {
@@ -31,12 +33,12 @@
             this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.revenueExpenditureBooksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.revenueAccountBookDataSet = new WindowsFormsApp1.RevenueAccountBookDataSet();
+            this.revenueAccountBookDataSet = new WindowsFormsApp1.Data.RevenueAccountBookDataSet();
             this.fillByToolStrip = new System.Windows.Forms.ToolStrip();
             this.spartaToolStripLabel = new System.Windows.Forms.ToolStripLabel();
             this.spartaToolStripTextBox = new System.Windows.Forms.ToolStripTextBox();
             this.fillByToolStripButton = new System.Windows.Forms.ToolStripButton();
-            this.revenueExpenditureBooksTableAdapter = new WindowsFormsApp1.RevenueAccountBookDataSetTableAdapters.RevenueExpenditureBooksTableAdapter();
+            this.revenueExpenditureBooksTableAdapter = new WindowsFormsApp1.Data.RevenueAccountBookDataSetTableAdapters.RevenueExpenditureBooksTableAdapter();
             this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.incomeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rawMaterialsDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -91,7 +93,7 @@
             this.fillByToolStrip.Size = new System.Drawing.Size(841, 25);
             this.fillByToolStrip.TabIndex = 1;
             this.fillByToolStrip.Text = "fillByToolStrip";
-            this.fillByToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.fillByToolStrip_ItemClicked);
+            this.fillByToolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.FillByToolStrip_ItemClicked);
             // 
             // spartaToolStripLabel
             // 
@@ -110,7 +112,7 @@
             this.fillByToolStripButton.Name = "fillByToolStripButton";
             this.fillByToolStripButton.Size = new System.Drawing.Size(26, 22);
             this.fillByToolStripButton.Text = "Go";
-            this.fillByToolStripButton.Click += new System.EventHandler(this.fillByToolStripButton_Click);
+            this.fillByToolStripButton.Click += new System.EventHandler(this.FillByToolStripButton_Click);
             // 
             // revenueExpenditureBooksTableAdapter
             // 
@@ -197,7 +199,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private RevenueAccountBookDataSet revenueAccountBookDataSet;
         private System.Windows.Forms.BindingSource revenueExpenditureBooksBindingSource;
-        private RevenueAccountBookDataSetTableAdapters.RevenueExpenditureBooksTableAdapter revenueExpenditureBooksTableAdapter;
+        private Data.RevenueAccountBookDataSetTableAdapters.RevenueExpenditureBooksTableAdapter revenueExpenditureBooksTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn checkOutPlusAndMinusDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStrip fillByToolStrip;
         private System.Windows.Forms.ToolStripLabel spartaToolStripLabel;

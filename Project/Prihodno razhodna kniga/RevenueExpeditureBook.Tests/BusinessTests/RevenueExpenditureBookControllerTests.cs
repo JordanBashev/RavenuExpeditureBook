@@ -4,7 +4,6 @@ using NUnit.Framework;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using WindowsFormsApp1.Bussiness;
 using WindowsFormsApp1.Data;
 using WindowsFormsApp1.Data.Models;

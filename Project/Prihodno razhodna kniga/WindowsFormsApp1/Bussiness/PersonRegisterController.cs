@@ -2,7 +2,6 @@
 using System.Linq;
 using WindowsFormsApp1.Data;
 using WindowsFormsApp1.Data.Models;
-using WindowsFormsApp1.View;
 
 namespace WindowsFormsApp1.Bussiness
 {

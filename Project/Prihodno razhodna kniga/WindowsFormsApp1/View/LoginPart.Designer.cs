@@ -106,6 +106,7 @@
             this.Controls.Add(this.txtUsername);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
+            this.ForeColor = System.Drawing.SystemColors.ControlText;
             this.Name = "LoginPart";
             this.Text = "Login";
             this.ResumeLayout(false);

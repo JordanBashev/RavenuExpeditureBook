@@ -10,7 +10,7 @@
 
 #pragma warning disable 1591
 
-namespace WindowsFormsApp1 {
+namespace WindowsFormsApp1.Data {
     
     
     /// <summary>
@@ -763,7 +763,7 @@ namespace WindowsFormsApp1 {
         }
     }
 }
-namespace WindowsFormsApp1.RevenueAccountBookDataSetTableAdapters {
+namespace WindowsFormsApp1.Data.RevenueAccountBookDataSetTableAdapters {
     
     
     /// <summary>

@@ -1,9 +1,7 @@
 ﻿using NUnit.Framework;
-using System;
 using Moq;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using WindowsFormsApp1.Data.Models;
 using WindowsFormsApp1.Data;
 using Microsoft.EntityFrameworkCore;
