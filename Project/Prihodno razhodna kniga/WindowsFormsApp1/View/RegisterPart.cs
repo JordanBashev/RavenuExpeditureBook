@@ -35,7 +35,7 @@ namespace WindowsFormsApp1.View
                     {
                         //this variable returns true if the name exists or false if no
                         var CheckIfExists = User.CheckIfUsernameExists(txtUsernameRegisterForm.Text);
-                        //this if statement checks are if the names are equal or no
+                        //this if statement checks if the names are equal or no
                         if (!(CheckIfExists == txtUsernameRegisterForm.Text))
                         {
                             User.Add(txtUsernameRegisterForm.Text, txtPasswordRegisterForm.Text);
