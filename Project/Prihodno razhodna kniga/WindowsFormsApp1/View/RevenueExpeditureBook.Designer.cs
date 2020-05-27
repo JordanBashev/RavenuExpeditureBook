@@ -1954,7 +1954,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.SystemColors.Window;
-            this.ClientSize = new System.Drawing.Size(1020, 749);
+            this.ClientSize = new System.Drawing.Size(1019, 741);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.pictureBox52);
             this.Controls.Add(this.pictureBox51);

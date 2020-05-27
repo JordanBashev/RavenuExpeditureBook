@@ -10,18 +10,20 @@ namespace WindowsFormsApp1.View
             InitializeComponent();
         }
 
+        //Show's the data from database
         private void GridView_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'revenueAccountBookDataSet.RevenueExpenditureBooks' table. You can move, or remove it, as needed.
+            //This line of code loads data into the 'revenueAccountBookDataSet.RevenueExpenditureBooks' table.
             this.revenueExpenditureBooksTableAdapter.Fill(this.revenueAccountBookDataSet.RevenueExpenditureBooks);
 
         }
 
+        //Sorts the database by the given number
         private void FillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
             {
-                this.revenueExpenditureBooksTableAdapter.FillBy(this.revenueAccountBookDataSet.RevenueExpenditureBooks, ((int)(Convert.ChangeType(spartaToolStripTextBox.Text, typeof(int)))));
+                this.revenueExpenditureBooksTableAdapter.FillBy(this.revenueAccountBookDataSet.RevenueExpenditureBooks, ((int)(Convert.ChangeType(ToolStripTextBox.Text, typeof(int)))));
             }
             catch (Exception ex)
             {

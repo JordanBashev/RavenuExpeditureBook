@@ -8,6 +8,7 @@ namespace WindowsFormsApp1.Data.Models
         [Key]
         public int PersonRegistersId { get; set; }
 
+        //Reference with PersonBookType Table
         [ForeignKey(nameof(PersonBook))]
         public int PersonBookTypesId { get; set; }
         public virtual PersonBookType PersonBook { get; set; }

@@ -17,12 +17,14 @@ namespace WindowsFormsApp1.Bussiness
 
         }
 
+        //Check's if The given bookType exist's in this case it's only "Buissines" and returns true or false
         public bool CheckIfExsist()
         {
             var a = context.PersonBookTypes.Count().Equals(1);
             return a;
         }
        
+        //Adds in Database
         public void Add(string Booktype,int id)
         {            
             using (context)
@@ -33,5 +35,7 @@ namespace WindowsFormsApp1.Bussiness
                 context.SaveChanges();
             }
         }
+
+        //We don't delete nor update methos since this is only used for bussines and nothin else
     }
 }

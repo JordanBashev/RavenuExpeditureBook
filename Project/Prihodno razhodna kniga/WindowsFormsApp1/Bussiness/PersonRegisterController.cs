@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.Bussiness
 
         }
 
+        //Method that checks if a given name exist's. if true returns the name, if false returns empty string.The empty string is used so we dont encounter problems
         public string CheckIfUsernameExists(string name)
         {
             var check = context.PersonRegisters.FirstOrDefault(x => x.Username == name);
@@ -31,12 +32,14 @@ namespace WindowsFormsApp1.Bussiness
             }
         }
 
+        //Method that returns all of the elemenest in the table of registered people
         public List<PersonRegister> GetAll()
         {
             var getId = context.PersonRegisters.ToList();
             return getId;
         }
 
+        //Adds in database
         public void Add(string name, string password)
         {
             PersonRegister UserAdding = new PersonRegister() { Username = name, Password = password };
@@ -45,6 +48,7 @@ namespace WindowsFormsApp1.Bussiness
             context.SaveChanges();
         }
 
+        //Deletes from database by id
         public void Delete(int id)
         {
             using (context)

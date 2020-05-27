@@ -21,6 +21,7 @@ namespace WindowsFormsApp1.View
         public void Register_Click(object sender, EventArgs e)
         {
             LoginPart login = new LoginPart();
+            //Check's is everything filled
             if (txtUsernameRegisterForm.Text == "" || txtPasswordRegisterForm.Text == "" || txtConfirmPasswordRegisterForm.Text == "" || Bookstypes.Text == "")
             {
                 MessageBox.Show("Please fill the rows to register");
@@ -29,12 +30,16 @@ namespace WindowsFormsApp1.View
             {
                 if (Bookstypes.Text == "Business")
                 {
+                    //Check's is the password textbox and Confirmpassword texbox are equal and not equal to zero
                     if (txtPasswordRegisterForm.Text == txtConfirmPasswordRegisterForm.Text && txtPasswordRegisterForm.Text.Length != 0)
                     {
+                        //this variable returns true if the name exists or false if no
                         var CheckIfExists = User.CheckIfUsernameExists(txtUsernameRegisterForm.Text);
+                        //this if statement checks are if the names are equal or no
                         if (!(CheckIfExists == txtUsernameRegisterForm.Text))
                         {
                             User.Add(txtUsernameRegisterForm.Text, txtPasswordRegisterForm.Text);
+                            //this if will happen only once per creation of a new account 
                             if (!(UserBookType.CheckIfExsist()))
                             {
                                 var business = "Business";
@@ -57,17 +62,7 @@ namespace WindowsFormsApp1.View
                         MessageBox.Show("Passswords doesn't match");
                     }
                 }
-                else
-                {
-                    MessageBox.Show("Passwords doesn't match");
-
-                }
             }       
-        }
-
-        public string GetBookType()
-        {
-            return Bookstypes.Text;
         }
 
         private void Return_Click(object sender, EventArgs e)

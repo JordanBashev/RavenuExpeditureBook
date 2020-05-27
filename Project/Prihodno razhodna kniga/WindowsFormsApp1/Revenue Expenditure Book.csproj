@@ -279,7 +279,6 @@
       <DependentUpon>20200522113400_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextsModelSnapshot.cs" />
-    <Compile Include="TODOLIST.cs" />
     <Compile Include="View\GridView.cs">
       <SubType>Form</SubType>
     </Compile>

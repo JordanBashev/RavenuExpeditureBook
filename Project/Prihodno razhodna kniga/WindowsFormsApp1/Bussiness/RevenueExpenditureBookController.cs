@@ -7,7 +7,9 @@ namespace WindowsFormsApp1.Bussiness
 {
     public class RevenueExpenditureBookController
     {
+        //The Object is used to get the values so we can change(update) the database
         RevenueExpenditureBook update = new RevenueExpenditureBook();
+
         private ApplicationContexts contexts;
         public RevenueExpenditureBookController(ApplicationContexts contex)
         {
@@ -19,12 +21,14 @@ namespace WindowsFormsApp1.Bussiness
 
         }
 
+        //Returns the value with the given id
         public RevenueExpenditureBook Get(int id)
         {
             var FindId = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Id == id);
             return FindId;
         }
 
+        //Adds in database
         public void Add(DateTime date, decimal income, decimal rawmaterials, decimal expenses, decimal balance, decimal counted, decimal checkout, int accountId, int Userid)
         {
 
@@ -35,6 +39,8 @@ namespace WindowsFormsApp1.Bussiness
 
         }
 
+
+        //Updates the database
         public void Update(DateTime date, decimal income, decimal rawmaterials, decimal expenses, decimal balance, decimal counted, decimal checkout, int accountid, int userid)
         {
 
@@ -50,6 +56,7 @@ namespace WindowsFormsApp1.Bussiness
             contexts.SaveChanges();
         }
 
+        //Deletes from database by id
         public void Delete(int deletebyuserid)
         {
             var getuserid = contexts.PersonRegisters.FirstOrDefault(x => x.Id == deletebyuserid);

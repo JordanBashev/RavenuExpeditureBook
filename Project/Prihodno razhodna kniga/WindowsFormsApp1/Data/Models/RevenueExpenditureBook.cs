@@ -23,10 +23,12 @@ namespace WindowsFormsApp1.Data.Models
 
         public decimal CheckOutPlusAndMinus { get; set; }
 
+        //Reference with PersonBookType Table
         [ForeignKey(nameof(PersonBookType))]
         public int AccountRavenueBookId { get; set; }
         public virtual PersonBookType PersonBookType { get; set; }
 
+        //Reference with PersonRegister Table 
         [ForeignKey(nameof(UserRegisterId))]
         public int UserRegisteredId { get; set; }
         public virtual PersonRegister UserRegisterId { get; set; }

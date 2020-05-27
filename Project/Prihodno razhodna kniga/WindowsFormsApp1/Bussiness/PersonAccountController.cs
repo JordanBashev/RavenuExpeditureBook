@@ -18,6 +18,7 @@ namespace WindowsFormsApp1.Bussiness
 
         }
 
+        //Adds in Database
         public void Add(int id)
         {
             using (context)
@@ -28,7 +29,8 @@ namespace WindowsFormsApp1.Bussiness
                 context.SaveChanges();
             }
         }
-
+        
+        //Deletes from Database by Id
         public void Delete(int id)
         {
             using (context)

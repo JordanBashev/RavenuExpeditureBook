@@ -24,10 +24,13 @@ namespace WindowsFormsApp1.View
             timer1.Enabled = true;
         }
 
+        //Method that return the ammount of counter cash from yesterday and puts the ammount in the first income box
         private string GetUserid()
         {
             var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
+            //get the id from the Revenue_Expediture_Books table
             var getthisid = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.UserRegisteredId == getusernameid.Id);
+            //gets the ammount of counted cash from yesterday
             var GetCountedFromYesterday = contexts.RevenueExpenditureBooks.Where(x => x.UserRegisteredId == getthisid.Id).FirstOrDefault(x => x.Date == GetTime().AddDays(-1));
             if (GetCountedFromYesterday == null)
             {
@@ -38,7 +41,8 @@ namespace WindowsFormsApp1.View
                 return Income1.Text = GetCountedFromYesterday.Counted.ToString();
             }
         }
-
+        
+        //Calculates the income boxes value
         public string GetIncomeValue()
         {
             decimal incomeresult = 0;
@@ -54,6 +58,7 @@ namespace WindowsFormsApp1.View
             return IncomeResult.Text = incomeresult.ToString();
         }
 
+        //Calculates the RawMaterials boxes value
         public string GetRawMaterialsValue()
         {
             decimal RawMaterialsresult = 0;
@@ -69,6 +74,7 @@ namespace WindowsFormsApp1.View
             return RamMatResult.Text = RawMaterialsresult.ToString();
         }
 
+        //Calculates the Expenses boxes value
         public string GetExpensesValue()
         {
             decimal Expensesresult = 0;
@@ -84,20 +90,24 @@ namespace WindowsFormsApp1.View
             return ExpenseResult.Text = Expensesresult.ToString();
         }
 
+        //Calculates the Sum of the expenses,rawmaterials,income boxes value
         public string GetBalanceValue()
         {
             decimal PreFinalResults = decimal.Parse(GetIncomeValue()) - decimal.Parse(GetRawMaterialsValue()) - decimal.Parse(GetExpensesValue());
             return Allbalance.Text = PreFinalResults.ToString();
         }
 
+        //Get the Counted boxes value
         public string GetCountedValue()
         {
             return CountedCash.Text.ToString();
         }
 
+        //Calculates the Total value of all boxes
         public string GetCheckoutValue()
         {
             decimal FinalResult;
+            //this if else statment is to prevent bugs with the + and - for the total value
             if (decimal.Parse(Allbalance.Text) < 0)
             {
                 FinalResult = decimal.Parse(Allbalance.Text) + decimal.Parse(CountedCash.Text);
@@ -112,12 +122,14 @@ namespace WindowsFormsApp1.View
             }
         }
 
+        //Calls the 2 methods above
         public void GetValuesForCheckout()
         {
             GetBalanceValue();
             GetCheckoutValue();
         }
 
+        //returns todays Date & Time
         public DateTime GetTime()
         {
             DatetimeLabel.Text = DateTime.Today.ToShortDateString();
@@ -131,14 +143,16 @@ namespace WindowsFormsApp1.View
 
         private void Info_Click(object sender, EventArgs e)
         {
-            Information name = new Information();
-            name.Show();
+            Information Information = new Information();
+            Information.Show();
         }
 
+        //Updates the database
         private void UpdateDB_Click(object sender, EventArgs e)
         {
             var getIdByUsername = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
             var getThisId = contexts.RevenueExpenditureBooks.Where(x => x.Date == GetTime()).FirstOrDefault(x => x.UserRegisteredId == getIdByUsername.Id);
+            //Returns null or todays date
             var CheckForDateTrue = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Date == GetTime());
             var Income = decimal.Parse(GetIncomeValue());
             var RawMaterial = decimal.Parse(GetRawMaterialsValue());
@@ -146,6 +160,8 @@ namespace WindowsFormsApp1.View
             var Balance = decimal.Parse(GetBalanceValue());
             var Counted = decimal.Parse(GetCountedValue());
             var CheckOut = decimal.Parse(GetCheckoutValue());
+
+            //this if ,else if statment checks if the data exists ,if no a new one is added if it exists it's updated.
             if (CheckForDateTrue == null || getThisId == null)
             {
                 BookForUser.Add(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getIdByUsername.Id);
@@ -158,6 +174,7 @@ namespace WindowsFormsApp1.View
             }
         }
 
+        //Delete's EVERYTHING from the Database connected with your account
         private void DeleteDB_Click(object sender, EventArgs e)
         {
             LoginPart login = new LoginPart();
@@ -328,7 +345,8 @@ namespace WindowsFormsApp1.View
             GridView view = new GridView();
             view.Show();
         }
-
+        
+        //Changes language to English
         private void English_Click(object sender, EventArgs e)
         {
             if (Namelbl.Text == "Name")
@@ -354,6 +372,7 @@ namespace WindowsFormsApp1.View
             }
         }
 
+        //Changes language to Bulgarian
         private void Bulgarian_Click(object sender, EventArgs e)
         {
             if (Namelbl.Text == "Име")
