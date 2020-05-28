@@ -24,7 +24,7 @@ namespace WindowsFormsApp1.View
             timer1.Enabled = true;
         }
 
-        //Method that return the ammount of counter cash from yesterday and puts the ammount in the first income box
+        //Method that return the amount of counted cash from yesterday and puts the amount in the first income box
         private string GetUserid()
         {
             var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
@@ -152,8 +152,10 @@ namespace WindowsFormsApp1.View
         {
             var getIdByUsername = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
             var getThisId = contexts.RevenueExpenditureBooks.Where(x => x.Date == GetTime()).FirstOrDefault(x => x.UserRegisteredId == getIdByUsername.Id);
+
             //Returns null or todays date
             var CheckForDateTrue = contexts.RevenueExpenditureBooks.FirstOrDefault(x => x.Date == GetTime());
+
             var Income = decimal.Parse(GetIncomeValue());
             var RawMaterial = decimal.Parse(GetRawMaterialsValue());
             var Expenses = decimal.Parse(GetExpensesValue());
@@ -174,7 +176,7 @@ namespace WindowsFormsApp1.View
             }
         }
 
-        //Delete's EVERYTHING from the Database connected with your account
+        //Deletes your account from the Database
         private void DeleteDB_Click(object sender, EventArgs e)
         {
             LoginPart login = new LoginPart();
