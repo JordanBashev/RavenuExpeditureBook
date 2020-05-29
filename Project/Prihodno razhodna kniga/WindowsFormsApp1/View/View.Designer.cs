@@ -2,7 +2,7 @@
 
 namespace WindowsFormsApp1.View
 {
-    partial class GridView
+    partial class View
     {
         /// <summary>
         /// Required designer variable.
@@ -182,7 +182,7 @@ namespace WindowsFormsApp1.View
             this.Controls.Add(this.dataGridView1);
             this.Name = "GridView";
             this.Text = "GridView";
-            this.Load += new System.EventHandler(this.GridView_Load);
+            this.Load += new System.EventHandler(this.View_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.revenueExpenditureBooksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.revenueAccountBookDataSet)).EndInit();
@@ -199,7 +199,6 @@ namespace WindowsFormsApp1.View
         private RevenueAccountBookDataSet revenueAccountBookDataSet;
         private System.Windows.Forms.BindingSource revenueExpenditureBooksBindingSource;
         private Data.RevenueAccountBookDataSetTableAdapters.RevenueExpenditureBooksTableAdapter revenueExpenditureBooksTableAdapter;
-        private System.Windows.Forms.DataGridViewTextBoxColumn checkOutPlusAndMinusDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStrip fillByToolStrip;
         private System.Windows.Forms.ToolStripLabel spartaToolStripLabel;
         private System.Windows.Forms.ToolStripTextBox ToolStripTextBox;

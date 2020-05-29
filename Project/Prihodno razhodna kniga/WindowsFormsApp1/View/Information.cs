@@ -3,8 +3,15 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.View
 {
+    /// <summary>
+    /// Main Infromation partial class
+    /// Countains methods which shows the information
+    /// </summary>
     public partial class Information : Form
     {
+        /// <summary>
+        /// InitializeComponent constructor
+        /// </summary>
         public Information()
         {
             InitializeComponent();

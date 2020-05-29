@@ -9,7 +9,9 @@
 
 namespace WindowsFormsApp1.RevenueAccountBookDataSetTableAdapters {
     
-    
+    /// <summary>
+    /// 
+    /// </summary>
     public partial class RevenueExpenditureBooksTableAdapter {
     }
 }

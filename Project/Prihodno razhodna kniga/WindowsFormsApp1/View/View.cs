@@ -3,22 +3,29 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1.View
 {
-    public partial class GridView : Form
+    /// <summary>
+    /// Main View partial class
+    /// Countains methods which allows us to view the database
+    /// </summary>
+    public partial class View : Form
     {
-        public GridView()
+        /// <summary>
+        /// InitializeComponent constructor
+        /// </summary>
+        public View()
         {
             InitializeComponent();
         }
 
         //Show's the data from database
-        private void GridView_Load(object sender, EventArgs e)
+        private void View_Load(object sender, EventArgs e)
         {
             //This line of code loads data into the 'revenueAccountBookDataSet.RevenueExpenditureBooks' table.
             this.revenueExpenditureBooksTableAdapter.Fill(this.revenueAccountBookDataSet.RevenueExpenditureBooks);
 
         }
 
-        //Sorts the database by the given number
+        //Sorts database by the given number
         private void FillByToolStripButton_Click(object sender, EventArgs e)
         {
             try
@@ -33,8 +40,6 @@ namespace WindowsFormsApp1.View
         }
 
         private void FillByToolStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
-        }
+        {}
     }
 }

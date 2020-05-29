@@ -5,8 +5,15 @@ using WindowsFormsApp1.Data;
 
 namespace WindowsFormsApp1.View
 {
+    /// <summary>
+    /// Main LoginPart partial class
+    /// Countains methods used to work with the form
+    /// </summary>
     public partial class LoginPart : Form
     {
+        /// <summary>
+        /// InitializeComponent Constructor
+        /// </summary>
         public LoginPart()
         {
             InitializeComponent();
@@ -17,7 +24,7 @@ namespace WindowsFormsApp1.View
         RevenueExpeditureBook RevenueExpediture = new RevenueExpeditureBook();
 
         //hides the login form and shows register form
-        public void Register_Click(object sender, EventArgs e)
+        private void Register_Click(object sender, EventArgs e)
         {
             this.Hide();
             register.Show();

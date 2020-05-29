@@ -3,8 +3,16 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace WindowsFormsApp1.Migrations
 {
+    /// <summary>
+    /// Main initial partial class
+    /// Countains ovveride methods used to create the database
+    /// </summary>
     public partial class initial : Migration
     {
+        /// <summary>
+        /// Creates the tables
+        /// </summary>
+        /// <param name="migrationBuilder"></param>
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
@@ -103,6 +111,10 @@ namespace WindowsFormsApp1.Migrations
                 column: "UserRegisteredId");
         }
 
+        /// <summary>
+        /// Drops the tablse if they exist
+        /// </summary>
+        /// <param name="migrationBuilder"></param>
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(

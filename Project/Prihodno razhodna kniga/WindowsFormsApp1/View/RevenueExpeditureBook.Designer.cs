@@ -2315,6 +2315,9 @@
         private System.Windows.Forms.PictureBox GreenAutoSizer;
         private System.Windows.Forms.PictureBox LightRedAutoSizer;
         private System.Windows.Forms.PictureBox RedAutoSizer;
+        /// <summary>
+        /// 
+        /// </summary>
         public System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button Sync;
         private System.Windows.Forms.Button GridView;

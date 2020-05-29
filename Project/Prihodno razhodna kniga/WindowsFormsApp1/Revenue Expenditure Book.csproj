@@ -25,6 +25,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <DocumentationFile>bin\Debug\WindowsFormsApp1.xml</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -279,11 +280,11 @@
       <DependentUpon>20200522113400_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\ApplicationContextsModelSnapshot.cs" />
-    <Compile Include="View\GridView.cs">
+    <Compile Include="View\View.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\GridView.Designer.cs">
-      <DependentUpon>GridView.cs</DependentUpon>
+    <Compile Include="View\View.Designer.cs">
+      <DependentUpon>View.cs</DependentUpon>
     </Compile>
     <Compile Include="View\Information.cs">
       <SubType>Form</SubType>
@@ -311,8 +312,8 @@
     <Compile Include="View\RevenueExpeditureBook.Designer.cs">
       <DependentUpon>RevenueExpeditureBook.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="View\GridView.resx">
-      <DependentUpon>GridView.cs</DependentUpon>
+    <EmbeddedResource Include="View\View.resx">
+      <DependentUpon>View.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="View\Information.resx">
       <DependentUpon>Information.cs</DependentUpon>

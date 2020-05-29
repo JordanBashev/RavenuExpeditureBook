@@ -13,6 +13,10 @@ namespace WindowsFormsApp1.Migrations
     [Migration("20200522113400_initial")]
     partial class initial
     {
+        /// <summary>
+        /// Creates the model of the table
+        /// </summary>
+        /// <param name="modelBuilder"></param>
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618

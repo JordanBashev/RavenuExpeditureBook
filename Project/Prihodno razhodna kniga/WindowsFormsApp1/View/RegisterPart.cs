@@ -6,6 +6,10 @@ using WindowsFormsApp1.Bussiness;
 
 namespace WindowsFormsApp1.View
 {
+    /// <summary>
+    /// Main RegisterPart partial class
+    /// Countains methods used to work with the form
+    /// </summary>
     public partial class RegisterPart : Form
     {
         PersonRegisterController User = new PersonRegisterController(new ApplicationContexts());
@@ -13,12 +17,16 @@ namespace WindowsFormsApp1.View
         RevenueExpenditureBookController BookForUser = new RevenueExpenditureBookController(new ApplicationContexts());
         PersonAccountController UserAccount = new PersonAccountController(new ApplicationContexts());
         RevenueExpeditureBook smallshop = new RevenueExpeditureBook();
+
+        /// <summary>
+        /// InitializeComponents constructor
+        /// </summary>
         public RegisterPart()
         {
             InitializeComponent();
         }
 
-        public void Register_Click(object sender, EventArgs e)
+        private void Register_Click(object sender, EventArgs e)
         {
             LoginPart login = new LoginPart();
             //Check's is everything filled

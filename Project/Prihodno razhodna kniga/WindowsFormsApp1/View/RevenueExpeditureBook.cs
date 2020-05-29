@@ -8,6 +8,10 @@ using WindowsFormsApp1.Data;
 
 namespace WindowsFormsApp1.View
 {
+    /// <summary>
+    /// Main RevenueExpeditureBook paritial class
+    /// Countains methods used to work with the form
+    /// </summary>
     public partial class RevenueExpeditureBook : Form
     {
 
@@ -17,6 +21,10 @@ namespace WindowsFormsApp1.View
 
         ApplicationContexts contexts = new ApplicationContexts();
 
+        /// <summary>
+        /// Gives today's date/time and puts the value into label,starts the timer.
+        /// InitializeComponent Constructor
+        /// </summary>
         public RevenueExpeditureBook()
         {
             InitializeComponent();
@@ -25,6 +33,12 @@ namespace WindowsFormsApp1.View
         }
 
         //Method that return the amount of counted cash from yesterday and puts the amount in the first income box
+        /// <summary>
+        /// Method that return the amount of counted cash from yesterday and puts the amount in the first income box
+        /// </summary>
+        /// <returns>
+        /// amount of counted cash from yesterday or 0
+        /// </returns>
         private string GetUserid()
         {
             var getusernameid = contexts.PersonRegisters.FirstOrDefault(x => x.Username == label14.Text);
@@ -41,8 +55,14 @@ namespace WindowsFormsApp1.View
                 return Income1.Text = GetCountedFromYesterday.Counted.ToString();
             }
         }
-        
+
         //Calculates the income boxes value
+        /// <summary>
+        /// //Calculates the income boxes value
+        /// </summary>
+        /// <returns>
+        /// Calculated value ToString
+        /// </returns>
         public string GetIncomeValue()
         {
             decimal incomeresult = 0;
@@ -59,6 +79,12 @@ namespace WindowsFormsApp1.View
         }
 
         //Calculates the RawMaterials boxes value
+        /// <summary>
+        /// //Calculates the RawMaterials boxes value
+        /// </summary>
+        /// <returns>
+        /// Calculated value ToString
+        /// </returns>
         public string GetRawMaterialsValue()
         {
             decimal RawMaterialsresult = 0;
@@ -75,6 +101,12 @@ namespace WindowsFormsApp1.View
         }
 
         //Calculates the Expenses boxes value
+        /// <summary>
+        /// //Calculates the Expenses boxes value
+        /// </summary>
+        /// <returns>
+        /// Calculated value ToString
+        /// </returns>
         public string GetExpensesValue()
         {
             decimal Expensesresult = 0;
@@ -91,6 +123,12 @@ namespace WindowsFormsApp1.View
         }
 
         //Calculates the Sum of the expenses,rawmaterials,income boxes value
+        /// <summary>
+        /// Calculates the Sum of the expenses,rawmaterials,income boxes value
+        /// </summary>
+        /// <returns>
+        /// Calculated value ToString
+        /// </returns>
         public string GetBalanceValue()
         {
             decimal PreFinalResults = decimal.Parse(GetIncomeValue()) - decimal.Parse(GetRawMaterialsValue()) - decimal.Parse(GetExpensesValue());
@@ -98,12 +136,24 @@ namespace WindowsFormsApp1.View
         }
 
         //Get the Counted boxes value
+        /// <summary>
+        /// Get the Counted boxes value
+        /// </summary>
+        /// <returns>
+        /// Counted value ToString
+        /// </returns>
         public string GetCountedValue()
         {
             return CountedCash.Text.ToString();
         }
 
         //Calculates the Total value of all boxes
+        /// <summary>
+        /// Calculates the Total value of all boxes
+        /// </summary>
+        /// <returns>
+        /// Total calculated value
+        /// </returns>
         public string GetCheckoutValue()
         {
             decimal FinalResult;
@@ -123,13 +173,22 @@ namespace WindowsFormsApp1.View
         }
 
         //Calls the 2 methods above
+        /// <summary>
+        /// Calls the 2 methods above
+        /// </summary>
         public void GetValuesForCheckout()
         {
             GetBalanceValue();
             GetCheckoutValue();
         }
 
-        //returns todays Date & Time
+        //returns todays Date and Time
+        /// <summary>
+        /// returns todays Date and Time
+        /// </summary>
+        /// <returns>
+        /// Date and Time
+        /// </returns>
         public DateTime GetTime()
         {
             DatetimeLabel.Text = DateTime.Today.ToShortDateString();
@@ -163,7 +222,7 @@ namespace WindowsFormsApp1.View
             var Counted = decimal.Parse(GetCountedValue());
             var CheckOut = decimal.Parse(GetCheckoutValue());
 
-            //this if ,else if statment checks if the data exists ,if no a new one is added if it exists it's updated.
+            //this if, else if statment checks if object with todays date exists ,if no a new one is added if it exists it's updated.
             if (CheckForDateTrue == null || getThisId == null)
             {
                 BookForUser.Add(GetTime(), Income, RawMaterial, Expenses, Balance, Counted, CheckOut, 1, getIdByUsername.Id);
@@ -200,7 +259,7 @@ namespace WindowsFormsApp1.View
                 {
                     if (x.Text.Length >= 2)
                     {
-                        x.Tag = "AboutToBeDeleted";
+                        x.Tag = "StopsInfiniteLoop";
                         foreach (Control z in this.Controls)
                         {
                             if (z is PictureBox && (string)z.Tag == "AutoSizing")
@@ -344,7 +403,7 @@ namespace WindowsFormsApp1.View
 
         private void GridView_Click(object sender, EventArgs e)
         {
-            GridView view = new GridView();
+            View view = new View();
             view.Show();
         }
         
